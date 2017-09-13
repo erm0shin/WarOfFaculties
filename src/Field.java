@@ -48,6 +48,7 @@ public class Field extends JDialog {
         enemyTeachScore.setText("0");
         enemyResScore.setText("0");
 
+
         BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
         ImageIcon no_avatar = new ImageIcon(no_image);
         prechoiceLabel.setIcon(no_avatar);
@@ -105,9 +106,9 @@ public class Field extends JDialog {
                         break;
                 }
 
-//                if (cards.get(i).getSkill() == Skill.killer) {
-//                    kill();
-//                }
+                if (card.getSkill() == Skill.killer) {
+                    kill();
+                }
 
                 player.removeCard(i);
                 pack.remove(pack.getComponent(i));
@@ -168,6 +169,11 @@ public class Field extends JDialog {
                 setMood(index, enemy, player);
                 break;
         }
+
+        if (card.getSkill() == Skill.killer) {
+            kill();
+        }
+
         enemy.removeCard(index);
         rePaint();
     }
@@ -186,6 +192,8 @@ public class Field extends JDialog {
             enemy.killSelfStrongestCards(maxEnemyPower);
             player.killSelfStrongestCards(maxPlayerPower);
         }
+
+        rePaint();
     }
 
     private void rePaint() {

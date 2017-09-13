@@ -33,7 +33,7 @@ public class Card extends AbstractCard{
     }
 
     public void multPower(double coefficient) {
-        power = (int)(power * coefficient);
+        power = (int)(Math.round(coefficient * power));
         if (power < 1) power = 1;
     }
 }
