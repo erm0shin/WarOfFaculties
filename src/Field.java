@@ -91,39 +91,27 @@ public class Field extends JDialog {
         Vector<AbstractCard> cards = player.getReserve();
         for (int i = 0; i < pack.getComponentCount(); i++) {
             AbstractCard card = cards.get(i);
-            if (id == /*cards.get(i).getId()*/card.getId()) {
-//                JButton button = new JButton();
-//                button.setIcon(cards.get(i).getIcon());
-//                button.setText(String.valueOf(cards.get(i).getPower()));
-//                button.addActionListener(e -> prechoice(button.getIcon(), id, false));
-                switch (/*cards.get(i).getCardType()*/card.getCardType()) {
+            if (id == card.getId()) {
+                switch (card.getCardType()) {
                     case student:
-//                        students.add(button);
-//                        students.revalidate();
-
-//                        player.addStudent((Card)cards.get(i));
                         player.addStudent((Card)card);
-                        player.removeCard(i);
-
                         break;
-//                    case teacher:
-//                        teachers.add(button);
-//                        teachers.revalidate();
-//                        player.addTeacher((Card)cards.get(i));
-//                        break;
-//                    default:
-//                        setMood(i);
+                    case teacher:
+                        player.addTeacher((Card)card);
+                        break;
+                    default:
+                        setMood(i, player, enemy);
 //                        return;
-//                        break;
+                        break;
                 }
 
 //                if (cards.get(i).getSkill() == Skill.killer) {
 //                    kill();
 //                }
 
+                player.removeCard(i);
                 pack.remove(pack.getComponent(i));
                 pack.revalidate();
-//                player.removeCard(i);   //cards.remove(i);
 
                 break; // Иначе выкладывает несколько одинаковых карт!!!
             }
@@ -142,7 +130,7 @@ public class Field extends JDialog {
         }
     }
 
-    private void setMood(int index) {
+    private void setMood(int index, Player player, Player enemy) {
         MoralCard card = (MoralCard)player.getReserve().get(index);
         switch (card.getCardType()) {
             case grant:
@@ -160,66 +148,28 @@ public class Field extends JDialog {
                 enemy.multTeachers(0.5);
                 break;
         }
-
-        rePaint();
-
-        pack.remove(pack.getComponent(index));
-        pack.revalidate();
-        player.removeCard(index);
     }
 
     private void enemyMove() {
         Random random = new Random();
-        Vector<AbstractCard> cards = enemy.getReserve();
-        int index = random.nextInt(cards.size());
+//        Vector<AbstractCard> cards = enemy.getReserve();
+        int index = random.nextInt(enemy.getReserve().size());
+        AbstractCard card = enemy.getReserve().get(index);
 
-//        System.out.println(cards.size());
-//        System.out.println(index);
-//        System.out.println();
-
-        JButton button = new JButton();
-        button.setIcon(cards.get(index).getIcon());
-        button.setText(String.valueOf(cards.get(index).getPower()));
-        button.addActionListener(e -> prechoice(button.getIcon(), /*cards.get(index).getId()*/-1, false));
-
-        switch (cards.get(index).getCardType()) {
+        switch (card.getCardType()) {
             case student:
-                enemyStudents.add(button);
-                enemyStudents.revalidate();
-                enemy.addStudent((Card) cards.get(index));
+                enemy.addStudent((Card)card);
                 break;
             case teacher:
-                enemyTeachers.add(button);
-                enemyTeachers.revalidate();
-                enemy.addTeacher((Card) cards.get(index));
+                enemy.addTeacher((Card)card);
                 break;
             default:
-                setEnemyMood(index);
-                return;
-//                break;
-        }
-        enemy.removeCard(index);   //cards.remove(i);
-        rePaint();
-    }
-
-    private void setEnemyMood(int index) {
-        MoralCard card = (MoralCard)enemy.getReserve().get(index);
-        switch (card.getCardType()) {
-            case grant:
-                enemy.multStudents(2);
-                break;
-            case premium:
-                enemy.multTeachers(2);
-                break;
-            case depreciation:
-                player.multStudents(0.5);
-                break;
-            case reprimand:
-                player.multTeachers(0.5);
+//                setEnemyMood(index);
+                setMood(index, enemy, player);
                 break;
         }
-        rePaint();
         enemy.removeCard(index);
+        rePaint();
     }
 
     private void kill() {
@@ -239,40 +189,10 @@ public class Field extends JDialog {
     }
 
     private void rePaint() {
-        students.removeAll();
-        for (int i = 0; i < player.getStudents().size(); i++) {
-            Card card = player.getStudents().get(i);
-            JButton button = new JButton();
-            button.setIcon(card.getIcon());
-            button.setText(String.valueOf(card.getPower()));
-            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), false));
-            students.add(button);
-            students.revalidate();
-//            player.addStudent((Card)cards.get(i));
-        }
-        for (int i = 0; i < player.getStudents().size(); i++) {
-            System.out.println(player.getStudents().get(i));
-        }
-        System.out.println();
-
-
-        for (int i = 0; i < students.getComponentCount(); i++) {
-            JButton button = (JButton)students.getComponent(i);
-            button.setText(String.valueOf(player.getStudents().get(i).getPower()));
-        }
-        for (int i = 0; i < teachers.getComponentCount(); i++) {
-            JButton button = (JButton)teachers.getComponent(i);
-            button.setText(String.valueOf(player.getTeachers().get(i).getPower()));
-        }
-
-        for (int i = 0; i < enemyStudents.getComponentCount(); i++) {
-            JButton button = (JButton)enemyStudents.getComponent(i);
-            button.setText(String.valueOf(enemy.getStudents().get(i).getPower()));
-        }
-        for (int i = 0; i < enemyTeachers.getComponentCount(); i++) {
-            JButton button = (JButton)enemyTeachers.getComponent(i);
-            button.setText(String.valueOf(enemy.getTeachers().get(i).getPower()));
-        }
+        rePaintStudents(students, player);
+        rePaintTeachers(teachers, player);
+        rePaintStudents(enemyStudents, enemy);
+        rePaintTeachers(enemyTeachers, enemy);
 
         studScore.setText(String.valueOf(player.getStudScore()));
         teachScore.setText(String.valueOf(player.getTeachScore()));
@@ -283,6 +203,42 @@ public class Field extends JDialog {
         enemyResScore.setText(String.valueOf(enemy.getResScore()));
 
         prechoiceLabel.setIcon(null);
+    }
+
+    private void rePaintStudents(JPanel panel, Player player) {
+        panel.removeAll();
+        for (int i = 0; i < player.getStudents().size(); i++) {
+            Card card = player.getStudents().get(i);
+            JButton button = new JButton();
+            button.setIcon(card.getIcon());
+            button.setText(String.valueOf(card.getPower()));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), false));
+            panel.add(button);
+            panel.revalidate();
+        }
+
+        for (int i = 0; i < panel.getComponentCount(); i++) {
+            JButton button = (JButton)panel.getComponent(i);
+            button.setText(String.valueOf(player.getStudents().get(i).getPower()));
+        }
+    }
+
+    private void rePaintTeachers(JPanel panel, Player player) {
+        panel.removeAll();
+        for (int i = 0; i < player.getTeachers().size(); i++) {
+            Card card = player.getTeachers().get(i);
+            JButton button = new JButton();
+            button.setIcon(card.getIcon());
+            button.setText(String.valueOf(card.getPower()));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), false));
+            panel.add(button);
+            panel.revalidate();
+        }
+
+        for (int i = 0; i < panel.getComponentCount(); i++) {
+            JButton button = (JButton)panel.getComponent(i);
+            button.setText(String.valueOf(player.getTeachers().get(i).getPower()));
+        }
     }
 
 //    public static void main(String[] args) throws IOException {

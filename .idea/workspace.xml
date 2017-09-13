@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ef811db-779e-43be-93c2-c5a38e2318ee" name="Default" comment="" />
+    <list default="true" id="6ef811db-779e-43be-93c2-c5a38e2318ee" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Field.java" afterPath="$PROJECT_DIR$/src/Field.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,13 +17,11 @@
       <file leaf-file-name="Field.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="123" column="23" lean-forward="false" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+            <state relative-caret-position="1083">
+              <caret line="172" column="5" lean-forward="false" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Field#0;class#Field#0" expanded="false" />
-                <element signature="method#setMood#0;class#Field#0" expanded="false" />
-                <element signature="method#setEnemyMood#0;class#Field#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -309,12 +309,12 @@
       <workItem from="1505235420943" duration="1416000" />
       <workItem from="1505236989951" duration="2286000" />
       <workItem from="1505240246389" duration="21217000" />
-      <workItem from="1505293017639" duration="2724000" />
+      <workItem from="1505293017639" duration="4777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44535000" />
+    <option name="totallyTimeSpent" value="46588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="610" y="319" width="1857" height="1092" extended-state="6" />
@@ -369,8 +369,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#setEnemyMood#0;class#Field#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -464,13 +462,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="123" column="23" lean-forward="false" selection-start-line="123" selection-start-column="23" selection-end-line="123" selection-end-column="23" />
+        <state relative-caret-position="1083">
+          <caret line="172" column="5" lean-forward="false" selection-start-line="172" selection-start-column="5" selection-end-line="172" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#setEnemyMood#0;class#Field#0" expanded="false" />
           </folding>
         </state>
       </provider>
