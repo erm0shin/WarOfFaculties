@@ -10,7 +10,7 @@ public class MoralCard extends AbstractCard {
 
     @Override
     public Skill getSkill() {
-        return null;
+        return Skill.nothing;
     }
 
     public MoralCard() throws IOException {

@@ -2,6 +2,7 @@ package player;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Vector;
 
 import Card.*;
@@ -13,6 +14,7 @@ public class Player {
     private Card king;
     private Fraction fraction;
     private int score;
+    private Generator generator = new Generator();
 
     public Vector<AbstractCard> getReserve() {
         return reserve;
@@ -32,6 +34,24 @@ public class Player {
 
     public void addStudent(Card student) {
         students.add(student);
+    }
+
+    public void addCards(int count) throws IOException {
+        Random random = new Random();
+        for (int i = 0; i < count; i++) {
+            int choice = random.nextInt(3);
+            switch (choice) {
+                case 0:
+                    reserve.addAll(generator.IU_students(1));
+                    break;
+                case 1:
+                    reserve.addAll(generator.IU_teachers(1));
+                    break;
+                case 2:
+                    reserve.addAll(generator.MoralCards(1));
+                    break;
+            }
+        }
     }
 
     public void addTeacher(Card teacher) {
@@ -75,27 +95,27 @@ public class Player {
         }
     }
 
-    public void inspire(/*Card card*/CardType cardType) {
-        switch (/*card.getCardType()*/cardType) {
+    public void inspire(Card card/*CardType cardType*/) {
+        switch (card.getCardType()/*cardType*/) {
             case student:
-//                for (int i = 0; i < students.size(); i++) {
-//                    if (students.get(i) != card) {
-//                        students.get(i).incPower();
-//                    }
-//                }
-                for (Card card: students) {
-                    card.incPower();
+                for (int i = 0; i < students.size(); i++) {
+                    if (students.get(i) != card) {
+                        students.get(i).incPower();
+                    }
                 }
+//                for (Card card: students) {
+//                    card.incPower();
+//                }
                 break;
             case teacher:
-//                for (int i = 0; i < teachers.size(); i++) {
-//                    if (teachers.get(i) != card) {
-//                        teachers.get(i).incPower();
-//                    }
-//                }
-                for (Card card: teachers) {
-                    card.incPower();
+                for (int i = 0; i < teachers.size(); i++) {
+                    if (teachers.get(i) != card) {
+                        teachers.get(i).incPower();
+                    }
                 }
+//                for (Card card: teachers) {
+//                    card.incPower();
+//                }
                 break;
         }
     }
@@ -128,7 +148,7 @@ public class Player {
     }
 
     public Player() throws IOException {
-        Generator generator = new Generator();
+//        Generator generator = new Generator();
 
         fraction = Fraction.IU;
         king = generator.IU_king();

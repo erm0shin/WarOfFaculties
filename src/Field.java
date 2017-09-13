@@ -82,40 +82,55 @@ public class Field extends JDialog {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                submit();
-                enemyMove();
+                try {
+                    submit();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                try {
+                    enemyMove();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
 
     }
 
-    private void submit() {
+    private void submit() throws IOException {
+        int i = 0;
         int id = Integer.parseInt(prechoiceLabel.getName());
         Vector<AbstractCard> cards = player.getReserve();
-        for (int i = 0; i < pack.getComponentCount(); i++) {
+        for (; i < pack.getComponentCount(); i++) {
             AbstractCard card = cards.get(i);
             if (id == card.getId()) {
                 switch (card.getCardType()) {
                     case student:
-                        player.addStudent((Card)card);
+                        if (card.getSkill() != Skill.spy) player.addStudent((Card)card);
                         break;
                     case teacher:
-                        player.addTeacher((Card)card);
+                        if (card.getSkill() != Skill.spy) player.addTeacher((Card)card);
                         break;
                     default:
-//                    case reprimand:
-//                    case depreciation:
-//                    case premium:
-//                    case grant:
                         setMood(i, player, enemy);
-//                        return;
                         break;
+                }
+
+                switch (card.getSkill()) {
+                    case killer:
+                        kill();
+                        break;
+                    case inspire:
+                        player.inspire((Card)card);
+                        break;
+                    case spy:
+                        spy(player, enemy, (Card)card);
                 }
 
 //                if (card.getSkill() == Skill.killer) {
 //                    kill();
 //                }
-
+//
 //                if (card.getSkill() == Skill.inspire) {
 //                    player.inspire((Card)card);
 //                    player.inspire(card.getCardType());
@@ -124,8 +139,8 @@ public class Field extends JDialog {
                 System.out.println(card);
 
                 player.removeCard(i);
-                pack.remove(pack.getComponent(i));
-                pack.revalidate();
+//                pack.remove(pack.getComponent(i));
+//                pack.revalidate();
 
                 break; // Иначе выкладывает несколько одинаковых карт!!!
             }
@@ -154,19 +169,19 @@ public class Field extends JDialog {
                 player.multTeachers(2);
                 break;
             case depreciation:
-//                player.multStudents(0.5);
                 enemy.multStudents(0.5);
                 break;
             case reprimand:
-//                player.multTeachers(0.5);
                 enemy.multTeachers(0.5);
                 break;
         }
     }
 
-    private void enemyMove() {
+    private void enemyMove() throws IOException {
+
+        //Надо учесть ограничение на количество ходов!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
         Random random = new Random();
-//        Vector<AbstractCard> cards = enemy.getReserve();
         int index = random.nextInt(enemy.getReserve().size());
         AbstractCard card = enemy.getReserve().get(index);
 
@@ -175,21 +190,31 @@ public class Field extends JDialog {
 
         switch (card.getCardType()) {
             case student:
-                enemy.addStudent((Card)card);
+                if (card.getSkill() != Skill.spy) enemy.addStudent((Card)card);
                 break;
             case teacher:
-                enemy.addTeacher((Card)card);
+                if (card.getSkill() != Skill.spy) enemy.addTeacher((Card)card);
                 break;
             default:
-//                setEnemyMood(index);
                 setMood(index, enemy, player);
                 break;
+        }
+
+        switch (card.getSkill()) {
+            case killer:
+                kill();
+                break;
+            case inspire:
+                enemy.inspire((Card)card);
+                break;
+            case spy:
+                spy(enemy, player, (Card)card);
         }
 
 //        if (card.getSkill() == Skill.killer) {
 //            kill();
 //        }
-
+//
 //        if (card.getSkill() == Skill.inspire) {
 //            enemy.inspire((Card)card);
 //            enemy.inspire(card.getCardType());
@@ -198,8 +223,18 @@ public class Field extends JDialog {
 //        prechoiceLabel.setIcon(card.getIcon());
 //        Thread.sleep(500);
 //        prechoiceLabel.setIcon(null);
+
         enemy.removeCard(index);
         rePaint();
+    }
+
+    private void spy(Player player, Player enemy, Card card) throws IOException {
+        if (card.getCardType() == CardType.student) {
+            enemy.addStudent(card);
+        } else {
+            enemy.addTeacher(card);
+        }
+        player.addCards(2);
     }
 
     private void kill() {
@@ -236,14 +271,18 @@ public class Field extends JDialog {
 
         prechoiceLabel.setIcon(null);
 
-//        System.out.println();
-//        for (Card card: player.getStudents()){
-//            System.out.println(card);
-//        }
-//        for (Card card: player.getTeachers()){
-//            System.out.println(card);
-//        }
-//        System.out.println();
+        System.out.println(enemy.getReserve().size());
+
+        pack.removeAll();
+        for (int i = 0; i < player.getReserve().size(); i++) {
+            AbstractCard card = player.getReserve().get(i);
+            JButton button = new JButton();
+            button.setIcon(card.getIcon());
+            button.setText(String.valueOf(card.getPower()));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), true));
+            pack.add(button);
+            pack.revalidate();
+        }
     }
 
     private void rePaintStudents(JPanel panel, Player player) {
