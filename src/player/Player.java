@@ -1,0 +1,119 @@
+package player;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Vector;
+
+import Card.*;
+
+public class Player {
+    private Vector<AbstractCard> reserve = new Vector<AbstractCard>();
+    private Vector<Card> students = new Vector<Card>();
+    private Vector<Card> teachers = new Vector<Card>();
+    private Card king;
+    private Fraction fraction;
+    private int score;
+
+    public Vector<AbstractCard> getReserve() {
+        return reserve;
+    }
+
+    public Vector<Card> getStudents() {
+        return students;
+    }
+
+    public Vector<Card> getTeachers() {
+        return teachers;
+    }
+
+    public Card getKing() {
+        return king;
+    }
+
+    public void addStudent(Card student) {
+        students.add(student);
+    }
+
+    public void addTeacher(Card teacher) {
+        teachers.add(teacher);
+    }
+
+    public void removeCard(int index) {
+        reserve.remove(index);
+    }
+
+    public int getStudScore() {
+        int result = 0;
+        for (Card card: students) {
+            result += card.getPower();
+        }
+        return result;
+    }
+
+    public int getTeachScore() {
+        int result = 0;
+        for (Card card: teachers) {
+            result += card.getPower();
+        }
+        return result;
+    }
+
+    public int getResScore() {
+        score = getStudScore() + getTeachScore();
+        return score;
+    }
+
+    public void multStudents(double coefficient) {
+        for (Card card: students) {
+            card.multPower(coefficient);
+        }
+    }
+
+    public void multTeachers(double coefficient) {
+        for (Card card: teachers) {
+            card.multPower(coefficient);
+        }
+    }
+
+    public int getMaxPower() {
+        int maxPower = 0;
+        for (Card card: students) {
+            if (card.getPower() > maxPower) {
+                maxPower = card.getPower();
+            }
+        }
+        for (Card card: teachers) {
+            if (card.getPower() > maxPower) {
+                maxPower = card.getPower();
+            }
+        }
+        return maxPower;
+    }
+
+    public void killSelfStrongestCards(int maxPower) {
+//        Iterator<Card> iter = students.iterator();
+//        while (iter.hasNext()) {
+//            Card card = iter.next();
+//            if (card.getPower() == maxPower) {
+//                iter.remove();
+//            }
+//        }
+        students.removeIf(card -> card.getPower() == maxPower);
+        teachers.removeIf(card -> card.getPower() == maxPower);
+    }
+
+    public Player() throws IOException {
+        Generator generator = new Generator();
+
+        fraction = Fraction.IU;
+        king = generator.IU_king();
+        reserve.addAll(generator.IU_students(5));
+        reserve.addAll(generator.IU_teachers(4));
+        reserve.addAll(generator.MoralCards(2));
+//        reserve.setSize(11);
+//        for (int i = 0; i < 5; i++) {
+//            reserve[i] = new Card(generator.IU_students(1));
+//        }
+        score = 0;
+    }
+}
