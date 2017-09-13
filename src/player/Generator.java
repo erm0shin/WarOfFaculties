@@ -34,7 +34,14 @@ public class Generator {
         Vector<Card> result = new Vector();
         Random random = new Random();
         for (int i = 0; i < number; i++) {
-            result.add(pack.get(random.nextInt(pack.size())));
+//            result.add(pack.get(random.nextInt(pack.size())));
+            Card card = pack.get(random.nextInt(pack.size()));
+            if (result.contains(card)) {
+                Card clone = new Card(card);
+                result.add(clone);
+            } else {
+                result.add(card);
+            }
         }
 
         return result;
@@ -55,7 +62,14 @@ public class Generator {
         Vector<Card> result = new Vector();
         Random random = new Random();
         for (int i = 0; i < number; i++) {
-            result.add(pack.get(random.nextInt(pack.size())));
+//            result.add(pack.get(random.nextInt(pack.size())));
+            Card card = pack.get(random.nextInt(pack.size()));
+            if (result.contains(card)) {
+                Card clone = new Card(card);
+                result.add(clone);
+            } else {
+                result.add(card);
+            }
         }
 
         return result;
@@ -72,7 +86,14 @@ public class Generator {
         Vector<MoralCard> result = new Vector();
         Random random = new Random();
         for (int i = 0; i < number; i++) {
-            result.add(pack.get(random.nextInt(pack.size())));
+//            result.add(pack.get(random.nextInt(pack.size())));
+            MoralCard card = pack.get(random.nextInt(pack.size()));
+            if (result.contains(card)) {
+                MoralCard clone = new MoralCard(card);
+                result.add(clone);
+            } else {
+                result.add(card);
+            }
         }
 
         return result;

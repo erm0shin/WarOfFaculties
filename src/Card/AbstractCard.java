@@ -69,4 +69,12 @@ public abstract class AbstractCard {
 
         this.cardType = _cardType;
     }
+
+    public AbstractCard(AbstractCard card) {
+        this.icon = card.icon;
+        this.id = AbstractCard.count_id;
+        AbstractCard.count_id++;
+        this.name = new String(card.name);
+        this.cardType = card.cardType;
+    }
 }

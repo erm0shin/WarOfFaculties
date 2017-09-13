@@ -28,6 +28,12 @@ public class Card extends AbstractCard{
         this.skill = _skill;
     }
 
+    public Card(Card card) {
+        super(card);
+        this.power = card.power;
+        this.skill = card.skill;
+    }
+
     public void incPower() {
         power += 1;
     }

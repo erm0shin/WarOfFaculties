@@ -75,6 +75,31 @@ public class Player {
         }
     }
 
+    public void inspire(/*Card card*/CardType cardType) {
+        switch (/*card.getCardType()*/cardType) {
+            case student:
+//                for (int i = 0; i < students.size(); i++) {
+//                    if (students.get(i) != card) {
+//                        students.get(i).incPower();
+//                    }
+//                }
+                for (Card card: students) {
+                    card.incPower();
+                }
+                break;
+            case teacher:
+//                for (int i = 0; i < teachers.size(); i++) {
+//                    if (teachers.get(i) != card) {
+//                        teachers.get(i).incPower();
+//                    }
+//                }
+                for (Card card: teachers) {
+                    card.incPower();
+                }
+                break;
+        }
+    }
+
     public int getMaxPower() {
         int maxPower = 0;
         for (Card card: students) {

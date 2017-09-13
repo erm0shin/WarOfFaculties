@@ -20,4 +20,8 @@ public class MoralCard extends AbstractCard {
     public MoralCard(String _name, String _src, CardType _cardType) throws IOException {
         super(_name, _src, _cardType);
     }
+
+    public MoralCard(MoralCard card) {
+        super(card);
+    }
 }

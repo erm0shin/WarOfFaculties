@@ -7,7 +7,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
+import java.util.Timer;
 import java.util.Vector;
+import java.util.concurrent.TimeUnit;
 
 import Card.*;
 import player.*;
@@ -34,6 +36,9 @@ public class Field extends JDialog {
     private Player player = new Player();
     private Player enemy = new Player();
 
+//    private BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
+//    private ImageIcon no_avatar = new ImageIcon(no_image);
+
 
     public Field() throws IOException {
         setContentPane(contentPane);
@@ -48,13 +53,10 @@ public class Field extends JDialog {
         enemyTeachScore.setText("0");
         enemyResScore.setText("0");
 
+//        BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
+//        ImageIcon no_avatar = new ImageIcon(no_image);
+        prechoiceLabel.setIcon(null);
 
-        BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
-        ImageIcon no_avatar = new ImageIcon(no_image);
-        prechoiceLabel.setIcon(no_avatar);
-
-//        BufferedImage dean = ImageIO.read(new File("src/images/proletarskiy.png"));
-//        ImageIcon king = new ImageIcon(dean);
         kingLabel.setIcon(player.getKing().getIcon());
 
         enemyKingLabel.setIcon(enemy.getKing().getIcon());
@@ -101,14 +103,25 @@ public class Field extends JDialog {
                         player.addTeacher((Card)card);
                         break;
                     default:
+//                    case reprimand:
+//                    case depreciation:
+//                    case premium:
+//                    case grant:
                         setMood(i, player, enemy);
 //                        return;
                         break;
                 }
 
-                if (card.getSkill() == Skill.killer) {
-                    kill();
-                }
+//                if (card.getSkill() == Skill.killer) {
+//                    kill();
+//                }
+
+//                if (card.getSkill() == Skill.inspire) {
+//                    player.inspire((Card)card);
+//                    player.inspire(card.getCardType());
+//                }
+
+                System.out.println(card);
 
                 player.removeCard(i);
                 pack.remove(pack.getComponent(i));
@@ -157,6 +170,9 @@ public class Field extends JDialog {
         int index = random.nextInt(enemy.getReserve().size());
         AbstractCard card = enemy.getReserve().get(index);
 
+        System.out.println(card);
+        System.out.println();
+
         switch (card.getCardType()) {
             case student:
                 enemy.addStudent((Card)card);
@@ -170,10 +186,18 @@ public class Field extends JDialog {
                 break;
         }
 
-        if (card.getSkill() == Skill.killer) {
-            kill();
-        }
+//        if (card.getSkill() == Skill.killer) {
+//            kill();
+//        }
 
+//        if (card.getSkill() == Skill.inspire) {
+//            enemy.inspire((Card)card);
+//            enemy.inspire(card.getCardType());
+//        }
+
+//        prechoiceLabel.setIcon(card.getIcon());
+//        Thread.sleep(500);
+//        prechoiceLabel.setIcon(null);
         enemy.removeCard(index);
         rePaint();
     }
@@ -211,6 +235,15 @@ public class Field extends JDialog {
         enemyResScore.setText(String.valueOf(enemy.getResScore()));
 
         prechoiceLabel.setIcon(null);
+
+//        System.out.println();
+//        for (Card card: player.getStudents()){
+//            System.out.println(card);
+//        }
+//        for (Card card: player.getTeachers()){
+//            System.out.println(card);
+//        }
+//        System.out.println();
     }
 
     private void rePaintStudents(JPanel panel, Player player) {
