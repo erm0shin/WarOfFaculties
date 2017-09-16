@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.ArrayList;
 
 import Card.*;
 
@@ -12,6 +11,7 @@ public class Player {
     private ArrayList<AbstractCard> reserve = new ArrayList<AbstractCard>();
     private ArrayList<Card> students = new ArrayList<Card>();
     private ArrayList<Card> teachers = new ArrayList<Card>();
+    private ArrayList<Card> removedCards = new ArrayList<Card>();
     private Card king;
     private Fraction fraction;
     private int score;
@@ -27,6 +27,10 @@ public class Player {
 
     public ArrayList<Card> getTeachers() {
         return teachers;
+    }
+
+    public ArrayList<Card> getRemovedCards() {
+        return removedCards;
     }
 
     public Card getKing() {
@@ -60,7 +64,27 @@ public class Player {
     }
 
     public void removeCard(int index) {
+//        AbstractCard card = reserve.get(index);
+//        if ((card.getCardType() == CardType.student) || (card.getCardType() == CardType.teacher)) {
+//            Card clone = new Card((Card)card);
+//            removedCards.add(clone);
+//        }
         reserve.remove(index);
+    }
+
+    public void removeCardsFromField() {
+        for (Card card: students) {
+            Card clone = new Card(card);
+            clone.setPowerToInitial();
+            removedCards.add(clone);
+        }
+        students.clear();
+        for (Card card: teachers) {
+            Card clone = new Card(card);
+            clone.setPowerToInitial();
+            removedCards.add(clone);
+        }
+        teachers.clear();
     }
 
     public int getStudScore() {
@@ -137,15 +161,27 @@ public class Player {
     }
 
     public void killSelfStrongestCards(int maxPower) {
-//        Iterator<Card> iter = students.iterator();
-//        while (iter.hasNext()) {
-//            Card card = iter.next();
-//            if (card.getPower() == maxPower) {
-//                iter.remove();
-//            }
-//        }
-        students.removeIf(card -> card.getPower() == maxPower);
-        teachers.removeIf(card -> card.getPower() == maxPower);
+        Iterator<Card> iterStud = students.iterator();
+        while (iterStud.hasNext()) {
+            Card card = iterStud.next();
+            if (card.getPower() == maxPower) {
+                Card clone = new Card(card);
+                removedCards.add(clone);
+                iterStud.remove();
+            }
+        }
+
+        Iterator<Card> iterTeach = teachers.iterator();
+        while (iterTeach.hasNext()) {
+            Card card = iterTeach.next();
+            if (card.getPower() == maxPower) {
+                Card clone = new Card(card);
+                removedCards.add(clone);
+                iterTeach.remove();
+            }
+        }
+//        students.removeIf(card -> card.getPower() == maxPower);
+//        teachers.removeIf(card -> card.getPower() == maxPower);
     }
 
     public Player() throws IOException {

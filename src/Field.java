@@ -1,18 +1,13 @@
-import javax.imageio.ImageIO;
+import Card.*;
+import player.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.Random;
-import java.util.Timer;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import Card.*;
-import player.*;
+import java.util.Random;
 
 
 public class Field extends JDialog {
@@ -32,13 +27,10 @@ public class Field extends JDialog {
     private JLabel enemyStudScore;
     private JLabel enemyResScore;
     private JLabel enemyKingLabel;
+    private JButton finishButton;
 
     private Player player = new Player();
     private Player enemy = new Player();
-
-//    private BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
-//    private ImageIcon no_avatar = new ImageIcon(no_image);
-
 
     public Field() throws IOException {
         setContentPane(contentPane);
@@ -53,8 +45,6 @@ public class Field extends JDialog {
         enemyTeachScore.setText("0");
         enemyResScore.setText("0");
 
-//        BufferedImage no_image = ImageIO.read(new File("src/images/no_image.png"));
-//        ImageIcon no_avatar = new ImageIcon(no_image);
         prechoiceLabel.setIcon(null);
 
         kingLabel.setIcon(player.getKing().getIcon());
@@ -70,7 +60,6 @@ public class Field extends JDialog {
 
         for (int i = 0; i < player.getReserve().size(); i++) {
             JButton button = new JButton();
-//            button.setIcon(card.getIcon());
             AbstractCard card = player.getReserve().get(i);
             button.setIcon(card.getIcon());
             button.setText(String.valueOf(card.getPower()));
@@ -95,6 +84,8 @@ public class Field extends JDialog {
             }
         });
 
+        finishButton.addActionListener(e -> finishRound());
+
     }
 
     private void submit() throws IOException {
@@ -104,47 +95,12 @@ public class Field extends JDialog {
         for (; i < pack.getComponentCount(); i++) {
             AbstractCard card = cards.get(i);
             if (id == card.getId()) {
-                switch (card.getCardType()) {
-                    case student:
-                        if (card.getSkill() != Skill.spy) player.addStudent((Card)card);
-                        break;
-                    case teacher:
-                        if (card.getSkill() != Skill.spy) player.addTeacher((Card)card);
-                        break;
-                    default:
-                        setMood(i, player, enemy);
-                        break;
-                }
-
-                switch (card.getSkill()) {
-                    case killer:
-                        kill();
-                        break;
-                    case inspire:
-                        player.inspire((Card)card);
-                        break;
-                    case spy:
-                        spy(player, enemy, (Card)card);
-                }
-
-//                if (card.getSkill() == Skill.killer) {
-//                    kill();
-//                }
-//
-//                if (card.getSkill() == Skill.inspire) {
-//                    player.inspire((Card)card);
-//                    player.inspire(card.getCardType());
-//                }
-
+                Move(player, enemy, card, i);
                 System.out.println(card);
-
-                player.removeCard(i);
-//                pack.remove(pack.getComponent(i));
-//                pack.revalidate();
-
                 break; // Иначе выкладывает несколько одинаковых карт!!!
             }
         }
+        player.removeCard(i);
         rePaint();
     }
 
@@ -188,15 +144,26 @@ public class Field extends JDialog {
         System.out.println(card);
         System.out.println();
 
+        Move(enemy, player, card, index);
+
+//        prechoiceLabel.setIcon(card.getIcon());
+//        Thread.sleep(500);
+//        prechoiceLabel.setIcon(null);
+
+        enemy.removeCard(index);
+        rePaint();
+    }
+
+    private void Move(Player player, Player enemy, AbstractCard card, int index) throws IOException {
         switch (card.getCardType()) {
             case student:
-                if (card.getSkill() != Skill.spy) enemy.addStudent((Card)card);
+                if (card.getSkill() != Skill.spy) player.addStudent((Card)card);
                 break;
             case teacher:
-                if (card.getSkill() != Skill.spy) enemy.addTeacher((Card)card);
+                if (card.getSkill() != Skill.spy) player.addTeacher((Card)card);
                 break;
             default:
-                setMood(index, enemy, player);
+                setMood(index, player, enemy);
                 break;
         }
 
@@ -205,26 +172,16 @@ public class Field extends JDialog {
                 kill();
                 break;
             case inspire:
-                enemy.inspire((Card)card);
+                player.inspire((Card)card);
                 break;
             case spy:
-                spy(enemy, player, (Card)card);
+                spy(player, enemy, (Card)card);
         }
+    }
 
-//        if (card.getSkill() == Skill.killer) {
-//            kill();
-//        }
-//
-//        if (card.getSkill() == Skill.inspire) {
-//            enemy.inspire((Card)card);
-//            enemy.inspire(card.getCardType());
-//        }
-
-//        prechoiceLabel.setIcon(card.getIcon());
-//        Thread.sleep(500);
-//        prechoiceLabel.setIcon(null);
-
-        enemy.removeCard(index);
+    private void finishRound() {
+        player.removeCardsFromField();
+        enemy.removeCardsFromField();
         rePaint();
     }
 
@@ -283,6 +240,15 @@ public class Field extends JDialog {
             pack.add(button);
             pack.revalidate();
         }
+
+//        System.out.println("Size of players removed cards is " + player.getRemovedCards().size());
+//        for (int j = 0; j < player.getRemovedCards().size(); j++) {
+//            System.out.println(player.getRemovedCards().get(j));
+//        }
+//        System.out.println("Size of players removed cards is " + enemy.getRemovedCards().size());
+//        for (int j = 0; j < enemy.getRemovedCards().size(); j++) {
+//            System.out.println(enemy.getRemovedCards().get(j));
+//        }
     }
 
     private void rePaintStudents(JPanel panel, Player player) {

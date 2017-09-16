@@ -9,6 +9,11 @@ public class MoralCard extends AbstractCard {
     }
 
     @Override
+    public int getInitPower() {
+        return 0;
+    }
+
+    @Override
     public Skill getSkill() {
         return Skill.nothing;
     }

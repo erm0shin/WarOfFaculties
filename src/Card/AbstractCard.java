@@ -6,10 +6,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-//enum CardType { moral, king, student, teacher };
-//enum MoralCardType { vygovor, depremirovanie, stipuha, premia };
-//enum SpecialCardType { nothing, inspire, spy, killer };
-
 public abstract class AbstractCard {
 //    protected int type;
     protected ImageIcon icon;
@@ -20,6 +16,8 @@ public abstract class AbstractCard {
     protected static int count_id = 0;
 
     public abstract int getPower();
+
+    public abstract int getInitPower();
 
     public abstract Skill getSkill();
 
