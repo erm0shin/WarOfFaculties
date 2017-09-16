@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Timer;
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import Card.*;
@@ -100,7 +100,7 @@ public class Field extends JDialog {
     private void submit() throws IOException {
         int i = 0;
         int id = Integer.parseInt(prechoiceLabel.getName());
-        Vector<AbstractCard> cards = player.getReserve();
+        ArrayList<AbstractCard> cards = player.getReserve();
         for (; i < pack.getComponentCount(); i++) {
             AbstractCard card = cards.get(i);
             if (id == card.getId()) {

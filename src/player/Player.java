@@ -1,30 +1,31 @@
 package player;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.Vector;
+import java.util.ArrayList;
 
 import Card.*;
 
 public class Player {
-    private Vector<AbstractCard> reserve = new Vector<AbstractCard>();
-    private Vector<Card> students = new Vector<Card>();
-    private Vector<Card> teachers = new Vector<Card>();
+    private ArrayList<AbstractCard> reserve = new ArrayList<AbstractCard>();
+    private ArrayList<Card> students = new ArrayList<Card>();
+    private ArrayList<Card> teachers = new ArrayList<Card>();
     private Card king;
     private Fraction fraction;
     private int score;
     private Generator generator = new Generator();
 
-    public Vector<AbstractCard> getReserve() {
+    public ArrayList<AbstractCard> getReserve() {
         return reserve;
     }
 
-    public Vector<Card> getStudents() {
+    public ArrayList<Card> getStudents() {
         return students;
     }
 
-    public Vector<Card> getTeachers() {
+    public ArrayList<Card> getTeachers() {
         return teachers;
     }
 
