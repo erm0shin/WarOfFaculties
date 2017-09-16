@@ -28,14 +28,24 @@ public class Field extends JDialog {
     private JLabel enemyResScore;
     private JLabel enemyKingLabel;
     private JButton finishButton;
+    private JButton showRemovedCardsButton;
 
     private Player player = new Player();
     private Player enemy = new Player();
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Player getEnemy() {
+        return enemy;
+    }
 
     public Field() throws IOException {
         setContentPane(contentPane);
         setModal(true);
         submitButton.setEnabled(false);
+        showRemovedCardsButton.setEnabled(false);
 
         studScore.setText("0");
         teachScore.setText("0");
@@ -81,11 +91,27 @@ public class Field extends JDialog {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
+                submitButton.setEnabled(false);
             }
         });
 
         finishButton.addActionListener(e -> finishRound());
 
+        showRemovedCardsButton.addActionListener(e -> {
+            try {
+                showRemovedCards();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
+    }
+
+    private void showRemovedCards() throws IOException {
+        RemovedCards dialog = new RemovedCards(/*player*/this);
+        dialog.pack();
+        dialog.setVisible(true);
+//        System.out.println(cureCard);
+        rePaint();
     }
 
     private void submit() throws IOException {
@@ -154,7 +180,7 @@ public class Field extends JDialog {
         rePaint();
     }
 
-    private void Move(Player player, Player enemy, AbstractCard card, int index) throws IOException {
+    public void Move(Player player, Player enemy, AbstractCard card, int index) throws IOException {
         switch (card.getCardType()) {
             case student:
                 if (card.getSkill() != Skill.spy) player.addStudent((Card)card);
@@ -239,6 +265,12 @@ public class Field extends JDialog {
             button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), true));
             pack.add(button);
             pack.revalidate();
+        }
+
+        if (player.getRemovedCards().size() == 0) {
+            showRemovedCardsButton.setEnabled(false);
+        } else {
+            showRemovedCardsButton.setEnabled(true);
         }
 
 //        System.out.println("Size of players removed cards is " + player.getRemovedCards().size());

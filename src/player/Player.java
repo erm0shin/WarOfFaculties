@@ -72,16 +72,22 @@ public class Player {
         reserve.remove(index);
     }
 
+    public void removeRemovedCard(Card card) {
+        removedCards.remove(card);
+    }
+
     public void removeCardsFromField() {
         for (Card card: students) {
+            card.setPowerToInitial();
             Card clone = new Card(card);
-            clone.setPowerToInitial();
+//            clone.setPowerToInitial();
             removedCards.add(clone);
         }
         students.clear();
         for (Card card: teachers) {
+            card.setPowerToInitial();
             Card clone = new Card(card);
-            clone.setPowerToInitial();
+//            clone.setPowerToInitial();
             removedCards.add(clone);
         }
         teachers.clear();
@@ -165,6 +171,7 @@ public class Player {
         while (iterStud.hasNext()) {
             Card card = iterStud.next();
             if (card.getPower() == maxPower) {
+                card.setPowerToInitial();
                 Card clone = new Card(card);
                 removedCards.add(clone);
                 iterStud.remove();
@@ -175,6 +182,7 @@ public class Player {
         while (iterTeach.hasNext()) {
             Card card = iterTeach.next();
             if (card.getPower() == maxPower) {
+                card.setPowerToInitial();
                 Card clone = new Card(card);
                 removedCards.add(clone);
                 iterTeach.remove();
