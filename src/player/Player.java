@@ -17,7 +17,25 @@ public class Player {
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private Fraction fraction;
     private int score;
+    private int winCount;
+    private int defeatCount;
     private Generator generator = new Generator();
+
+    public int getWinCount() {
+        return winCount;
+    }
+
+    public int getDefeatCount() {
+        return defeatCount;
+    }
+
+    public void incWinCount() {
+        winCount++;
+    }
+
+    public void incDefeatCount() {
+        defeatCount++;
+    }
 
     public ArrayList<AbstractCard> getReserve() {
         return reserve;
@@ -201,17 +219,13 @@ public class Player {
     }
 
     public Player() throws IOException {
-//        Generator generator = new Generator();
-
         fraction = Fraction.IU;
+        winCount = 0;
+        defeatCount = 0;
         king = generator.iuKing();
         reserve.addAll(generator.iuStudents(5));
         reserve.addAll(generator.iuTeachers(4));
         reserve.addAll(generator.moralCards(2));
-//        reserve.setSize(11);
-//        for (int i = 0; i < 5; i++) {
-//            reserve[i] = new cards(generator.IU_students(1));
-//        }
         score = 0;
     }
 }

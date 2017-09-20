@@ -1,8 +1,12 @@
+package forms;
+
 import cards.*;
 import player.Player;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,6 +32,12 @@ public class Field extends JDialog {
     private JLabel enemyKingLabel;
     private JButton finishButton;
     private JButton showRemovedCardsButton;
+    private JLabel enemyLife1Label;
+    private JLabel enemyLife2Label;
+    private JLabel playerLife1Label;
+    private JLabel playerLife2Label;
+    private JPanel enemyLifes;
+    private JPanel playerLifes;
 
     private static final double MIN_MULT_COEF = 0.5;
     private static final double MAX_MULT_COEF = 2;
@@ -49,10 +59,10 @@ public class Field extends JDialog {
         submitButton.setEnabled(false);
         showRemovedCardsButton.setEnabled(false);
 
-        for (int i = 0; i < enemy.getReserve().size(); i++) {
-            System.out.println(enemy.getReserve().get(i));
-        }
-        System.out.println();
+//        for (int i = 0; i < enemy.getReserve().size(); i++) {
+//            System.out.println(enemy.getReserve().get(i));
+//        }
+//        System.out.println();
 
         studScore.setText("0");
         teachScore.setText("0");
@@ -67,6 +77,12 @@ public class Field extends JDialog {
         kingLabel.setIcon(player.getKing().getIcon());
 
         enemyKingLabel.setIcon(enemy.getKing().getIcon());
+
+        final ImageIcon ruby = new ImageIcon(ImageIO.read(new File("src/images/ruby.jpg")));
+        playerLife1Label.setIcon(ruby);
+        playerLife2Label.setIcon(ruby);
+        enemyLife1Label.setIcon(ruby);
+        enemyLife2Label.setIcon(ruby);
 
         pack.setLayout(new GridLayout());
         students.setLayout(new GridLayout());
@@ -108,6 +124,7 @@ public class Field extends JDialog {
     private void heal(Player player) throws IOException {
         if (Objects.equals(player, this.player)) {
             showRemovedCards(true);
+            return;
         }
         final int size = enemy.getRemovedCards().size();
         if (size != 0) {
@@ -231,9 +248,52 @@ public class Field extends JDialog {
         }
     }
 
+    @SuppressWarnings("deprecation")
     private void finishRound() {
+
+        //отправить информацию о завершении раунда соперника
+        //получить информацию от соперника о завершении им раунда
+
+        final int playerScore = player.getResScore();
+        final int enemyScore = enemy.getResScore();
+        if (playerScore > enemyScore) {
+            player.incWinCount();
+            enemy.incDefeatCount();
+        }
+        if (playerScore < enemyScore) {
+            player.incDefeatCount();
+            enemy.incWinCount();
+        }
+        if (playerScore == enemyScore) {
+            player.incWinCount();
+            player.incDefeatCount();
+            enemy.incWinCount();
+            enemy.incDefeatCount();
+        }
+
+        final int playerWinCount = player.getWinCount();
+        final int playerDefeatCount = player.getDefeatCount();
+        final int enemyDefeatCount = enemy.getDefeatCount();
+        for (int i = 0; i < playerDefeatCount; i++) {
+            this.playerLifes.getComponent(i).hide();
+        }
+        for (int i = 0; i < enemyDefeatCount; i++) {
+            this.enemyLifes.getComponent(i).hide();
+        }
+
+        if ((playerWinCount == playerDefeatCount) && (playerDefeatCount == 2)) {
+            JOptionPane.showMessageDialog(this, "Dead heat");
+        }
+        if (playerWinCount == 2) {
+            JOptionPane.showMessageDialog(this, "You won");
+        }
+        if (playerDefeatCount == 2) {
+            JOptionPane.showMessageDialog(this, "You lose");
+        }
+
         player.removeCardsFromField();
         enemy.removeCardsFromField();
+
         rePaint();
     }
 

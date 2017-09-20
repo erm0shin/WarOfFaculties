@@ -1,3 +1,5 @@
+package forms;
+
 import cards.Card;
 
 import javax.swing.*;
