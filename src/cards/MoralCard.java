@@ -1,4 +1,4 @@
-package Card;
+package cards;
 
 import java.io.IOException;
 
@@ -18,12 +18,13 @@ public class MoralCard extends AbstractCard {
         return Skill.nothing;
     }
 
+    @SuppressWarnings("unused")
     public MoralCard() throws IOException {
         super();
     }
 
-    public MoralCard(String _name, String _src, CardType _cardType) throws IOException {
-        super(_name, _src, _cardType);
+    public MoralCard(String name, String src, CardType cardType) throws IOException {
+        super(name, src, cardType);
     }
 
     public MoralCard(MoralCard card) {

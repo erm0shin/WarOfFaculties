@@ -1,21 +1,21 @@
 package player;
 
-import Card.*;
+import cards.*;
 
 import java.io.IOException;
 import java.util.Random;
 import java.util.ArrayList;
 
-//cards.add(new Card("asdf", "src/images/dvoechnik.png", CardType.student, 1, Skill.nothing));
-
+@SuppressWarnings("Duplicates")
 public class Generator {
-    Card IU_king() throws IOException {
-        Card king = new Card("Proletarskiy", "src/images/proletarskiy.png", CardType.king, 0, Skill.nothing);
+    @SuppressWarnings("UnnecessaryLocalVariable")
+    Card iuKing() throws IOException {
+        final Card king = new Card("Proletarskiy", "src/images/proletarskiy.png", CardType.king, 0, Skill.nothing);
         return king;
     }
 
-    ArrayList<Card> IU_students(int number) throws IOException {
-        ArrayList<Card> pack = new ArrayList<>();
+    ArrayList<Card> iuStudents(int number) throws IOException {
+        final ArrayList<Card> pack = new ArrayList<>();
 
         pack.add(new Card("Первокурсник", "src/images/pervokursnik.png", CardType.student, 1, Skill.nothing));
         pack.add(new Card("Первокурсник", "src/images/pervokursnik.png", CardType.student, 1, Skill.nothing));
@@ -31,13 +31,12 @@ public class Generator {
         pack.add(new Card("Технопарковец", "src/images/technopark.png", CardType.student, 5, Skill.inspire));
         pack.add(new Card("Технопарковец", "src/images/technopark.png", CardType.student, 5, Skill.inspire));
 
-        ArrayList<Card> result = new ArrayList<>();
-        Random random = new Random();
+        final ArrayList<Card> result = new ArrayList<>();
+        final Random random = new Random();
         for (int i = 0; i < number; i++) {
-//            result.add(pack.get(random.nextInt(pack.size())));
-            Card card = pack.get(random.nextInt(pack.size()));
+            final Card card = pack.get(random.nextInt(pack.size()));
             if (result.contains(card)) {
-                Card clone = new Card(card);
+                final Card clone = new Card(card);
                 result.add(clone);
             } else {
                 result.add(card);
@@ -47,10 +46,10 @@ public class Generator {
         return result;
     }
 
-    ArrayList<Card> IU_teachers(int number) throws IOException {
-        ArrayList<Card> pack = new ArrayList<>();
+    ArrayList<Card> iuTeachers(int number) throws IOException {
+        final ArrayList<Card> pack = new ArrayList<>();
 
-        pack.add(new Card("Гуренко", "src/images/gurenko.png", CardType.teacher, 4, Skill.nothing));
+        pack.add(new Card("Гуренко", "src/images/gurenko.png", CardType.teacher, 4, Skill.doctor));
         pack.add(new Card("Кузовлев", "src/images/kuzovlev.png", CardType.teacher, 4, Skill.spy));
         pack.add(new Card("Тихомирова", "src/images/tichomirova.png", CardType.teacher, 3, Skill.inspire));
         pack.add(new Card("Иванов", "src/images/ivanov.png", CardType.teacher, 5, Skill.killer));
@@ -59,13 +58,12 @@ public class Generator {
         pack.add(new Card("Пугачев", "src/images/pugachev.png", CardType.teacher, 4, Skill.nothing));
         pack.add(new Card("Иванова", "src/images/ivanova.jpg", CardType.teacher, 6, Skill.inspire));
 
-        ArrayList<Card> result = new ArrayList<>();
-        Random random = new Random();
+        final ArrayList<Card> result = new ArrayList<>();
+        final Random random = new Random();
         for (int i = 0; i < number; i++) {
-//            result.add(pack.get(random.nextInt(pack.size())));
-            Card card = pack.get(random.nextInt(pack.size()));
+            final Card card = pack.get(random.nextInt(pack.size()));
             if (result.contains(card)) {
-                Card clone = new Card(card);
+                final Card clone = new Card(card);
                 result.add(clone);
             } else {
                 result.add(card);
@@ -75,21 +73,21 @@ public class Generator {
         return result;
     }
 
-    ArrayList<MoralCard> MoralCards(int number) throws IOException {
-        ArrayList<MoralCard> pack = new ArrayList<>();
+    ArrayList<MoralCard> moralCards(int number) throws IOException {
+        final ArrayList<MoralCard> pack = new ArrayList<>();
 
         pack.add(new MoralCard("Депремирование", "src/images/reprimand.jpg", CardType.reprimand));
         pack.add(new MoralCard("Выговор", "src/images/depreciation.jpg", CardType.depreciation));
         pack.add(new MoralCard("Премия", "src/images/premium.jpg", CardType.premium));
         pack.add(new MoralCard("Стипендия", "src/images/grant.jpg", CardType.grant));
 
-        ArrayList<MoralCard> result = new ArrayList<>();
-        Random random = new Random();
+        final ArrayList<MoralCard> result = new ArrayList<>();
+        final Random random = new Random();
         for (int i = 0; i < number; i++) {
 //            result.add(pack.get(random.nextInt(pack.size())));
-            MoralCard card = pack.get(random.nextInt(pack.size()));
+            final MoralCard card = pack.get(random.nextInt(pack.size()));
             if (result.contains(card)) {
-                MoralCard clone = new MoralCard(card);
+                final MoralCard clone = new MoralCard(card);
                 result.add(clone);
             } else {
                 result.add(card);

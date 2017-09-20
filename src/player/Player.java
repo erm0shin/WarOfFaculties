@@ -3,16 +3,18 @@ package player;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Random;
 
-import Card.*;
+import cards.*;
 
 public class Player {
-    private ArrayList<AbstractCard> reserve = new ArrayList<AbstractCard>();
-    private ArrayList<Card> students = new ArrayList<Card>();
-    private ArrayList<Card> teachers = new ArrayList<Card>();
-    private ArrayList<Card> removedCards = new ArrayList<Card>();
+    private ArrayList<AbstractCard> reserve = new ArrayList<>();
+    private ArrayList<Card> students = new ArrayList<>();
+    private ArrayList<Card> teachers = new ArrayList<>();
+    private ArrayList<Card> removedCards = new ArrayList<>();
     private Card king;
+    @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private Fraction fraction;
     private int score;
     private Generator generator = new Generator();
@@ -42,18 +44,20 @@ public class Player {
     }
 
     public void addCards(int count) throws IOException {
-        Random random = new Random();
+        final Random random = new Random();
         for (int i = 0; i < count; i++) {
-            int choice = random.nextInt(3);
+            final int choice = random.nextInt(3);
             switch (choice) {
                 case 0:
-                    reserve.addAll(generator.IU_students(1));
+                    reserve.addAll(generator.iuStudents(1));
                     break;
                 case 1:
-                    reserve.addAll(generator.IU_teachers(1));
+                    reserve.addAll(generator.iuTeachers(1));
                     break;
                 case 2:
-                    reserve.addAll(generator.MoralCards(1));
+                    reserve.addAll(generator.moralCards(1));
+                    break;
+                default:
                     break;
             }
         }
@@ -66,7 +70,7 @@ public class Player {
     public void removeCard(int index) {
 //        AbstractCard card = reserve.get(index);
 //        if ((card.getCardType() == CardType.student) || (card.getCardType() == CardType.teacher)) {
-//            Card clone = new Card((Card)card);
+//            cards clone = new cards((cards)card);
 //            removedCards.add(clone);
 //        }
         reserve.remove(index);
@@ -79,14 +83,14 @@ public class Player {
     public void removeCardsFromField() {
         for (Card card: students) {
             card.setPowerToInitial();
-            Card clone = new Card(card);
+            final Card clone = new Card(card);
 //            clone.setPowerToInitial();
             removedCards.add(clone);
         }
         students.clear();
         for (Card card: teachers) {
             card.setPowerToInitial();
-            Card clone = new Card(card);
+            final Card clone = new Card(card);
 //            clone.setPowerToInitial();
             removedCards.add(clone);
         }
@@ -126,27 +130,30 @@ public class Player {
         }
     }
 
+    @SuppressWarnings("EnumSwitchStatementWhichMissesCases")
     public void inspire(Card card/*CardType cardType*/) {
         switch (card.getCardType()/*cardType*/) {
             case student:
-                for (int i = 0; i < students.size(); i++) {
-                    if (students.get(i) != card) {
-                        students.get(i).incPower();
+//                for (int i = 0; i < students.size(); i++) {
+//                    if (students.get(i) != card) {
+//                        students.get(i).incPower();
+//                    }
+//                }
+                for (Card student : students) {
+//                    if (student != card) {
+                    if (!Objects.equals(student, card)) {
+                        student.incPower();
                     }
                 }
-//                for (Card card: students) {
-//                    card.incPower();
-//                }
                 break;
             case teacher:
-                for (int i = 0; i < teachers.size(); i++) {
-                    if (teachers.get(i) != card) {
-                        teachers.get(i).incPower();
+                for (Card teacher : teachers) {
+                    if (!Objects.equals(teacher, card)) {
+                        teacher.incPower();
                     }
                 }
-//                for (Card card: teachers) {
-//                    card.incPower();
-//                }
+                break;
+            default:
                 break;
         }
     }
@@ -166,24 +173,25 @@ public class Player {
         return maxPower;
     }
 
+    @SuppressWarnings("Duplicates")
     public void killSelfStrongestCards(int maxPower) {
-        Iterator<Card> iterStud = students.iterator();
+        final Iterator<Card> iterStud = students.iterator();
         while (iterStud.hasNext()) {
-            Card card = iterStud.next();
+            final Card card = iterStud.next();
             if (card.getPower() == maxPower) {
                 card.setPowerToInitial();
-                Card clone = new Card(card);
+                final Card clone = new Card(card);
                 removedCards.add(clone);
                 iterStud.remove();
             }
         }
 
-        Iterator<Card> iterTeach = teachers.iterator();
+        final Iterator<Card> iterTeach = teachers.iterator();
         while (iterTeach.hasNext()) {
-            Card card = iterTeach.next();
+            final Card card = iterTeach.next();
             if (card.getPower() == maxPower) {
                 card.setPowerToInitial();
-                Card clone = new Card(card);
+                final Card clone = new Card(card);
                 removedCards.add(clone);
                 iterTeach.remove();
             }
@@ -196,13 +204,13 @@ public class Player {
 //        Generator generator = new Generator();
 
         fraction = Fraction.IU;
-        king = generator.IU_king();
-        reserve.addAll(generator.IU_students(5));
-        reserve.addAll(generator.IU_teachers(4));
-        reserve.addAll(generator.MoralCards(2));
+        king = generator.iuKing();
+        reserve.addAll(generator.iuStudents(5));
+        reserve.addAll(generator.iuTeachers(4));
+        reserve.addAll(generator.moralCards(2));
 //        reserve.setSize(11);
 //        for (int i = 0; i < 5; i++) {
-//            reserve[i] = new Card(generator.IU_students(1));
+//            reserve[i] = new cards(generator.IU_students(1));
 //        }
         score = 0;
     }

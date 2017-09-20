@@ -1,4 +1,4 @@
-import Card.Card;
+import cards.Card;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,8 @@ public class RemovedCards extends JDialog {
     private Color defaultColor;
     private ArrayList<Card> cards;
 
-    public RemovedCards(Field field) {
+    @SuppressWarnings("deprecation")
+    public RemovedCards(Field field, boolean buttonRequired) {
         setContentPane(contentPane);
         setModal(true);
         submitButton.setFocusable(false);
@@ -22,9 +23,16 @@ public class RemovedCards extends JDialog {
 
         this.cards = field.getPlayer().getRemovedCards();
 
-        for (int i = 0; i < cards.size(); i++) {
-            JButton button = new JButton();
-            Card card = cards.get(i);
+//        for (int i = 0; i < cards.size(); i++) {
+//            JButton button = new JButton();
+//            cards card = cards.get(i);
+//            button.setIcon(card.getIcon());
+//            removedCards.add(button);
+//            removedCards.revalidate();
+//            button.addActionListener(e -> prechoice(card.getId(), button));
+//        }
+        for (Card card : cards) {
+            final JButton button = new JButton();
             button.setIcon(card.getIcon());
             removedCards.add(button);
             removedCards.revalidate();
@@ -32,6 +40,10 @@ public class RemovedCards extends JDialog {
         }
 
         defaultColor = removedCards.getComponent(0).getBackground();
+
+        if (!buttonRequired) {
+            submitButton.hide();
+        }
 
         submitButton.addActionListener(e -> {
             try {
@@ -48,16 +60,24 @@ public class RemovedCards extends JDialog {
             removedCards.getComponent(i).setBackground(defaultColor);
         }
         button.setBackground(Color.ORANGE);
-        System.out.println(cardId);
+//        System.out.println(cardId);
     }
 
     private void submit(Field field) throws IOException {
-        int i = 0;
-        for (; i < cards.size(); i++) {
-            Card card = cards.get(i);
+//        int i = 0;
+//        for (; i < cards.size(); i++) {
+//            final cards card = cards.get(i);
+//            if (cardId == card.getId()) {
+//                final cards clone = new cards(card);
+//                field.Move(field.getPlayer(), field.getEnemy(), clone, -1);
+//                field.getPlayer().removeRemovedCard(card);
+//                break;
+//            }
+//        }
+        for (Card card : cards) {
             if (cardId == card.getId()) {
-                Card clone = new Card(card);
-                field.Move(field.getPlayer(), field.getEnemy(), clone, -1);
+                final Card clone = new Card(card);
+                field.move(field.getPlayer(), field.getEnemy(), clone, -1);
                 field.getPlayer().removeRemovedCard(card);
                 break;
             }

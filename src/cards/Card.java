@@ -1,4 +1,4 @@
-package Card;
+package cards;
 
 import java.io.IOException;
 
@@ -22,6 +22,7 @@ public class Card extends AbstractCard{
         return skill;
     }
 
+    @SuppressWarnings("unused")
     public Card() throws IOException {
         super();
         this.power = 0;
@@ -33,11 +34,11 @@ public class Card extends AbstractCard{
         this.power = this.initPower;
     }
 
-    public Card(String _name, String _src, CardType _cardType, int _power, Skill _skill) throws IOException {
-        super(_name, _src, _cardType);
-        this.power = _power;
+    public Card(String name, String src, CardType cardType, int power, Skill skill) throws IOException {
+        super(name, src, cardType);
+        this.power = power;
         this.initPower = this.power;
-        this.skill = _skill;
+        this.skill = skill;
     }
 
     public Card(Card card) {

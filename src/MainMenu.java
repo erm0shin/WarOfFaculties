@@ -19,13 +19,13 @@ public class MainMenu extends JDialog {
     }
 
     private void play() throws IOException {
-        Field dialog = new Field();
+        final Field dialog = new Field();
         dialog.pack();
         dialog.setVisible(true);
     }
 
     public static void main(String[] args) {
-        MainMenu dialog = new MainMenu();
+        final MainMenu dialog = new MainMenu();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

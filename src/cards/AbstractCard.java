@@ -1,4 +1,4 @@
-package Card;
+package cards;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -7,16 +7,16 @@ import java.io.File;
 import java.io.IOException;
 
 public abstract class AbstractCard {
-//    protected int type;
     protected ImageIcon icon;
     protected String name;
     protected int id;
     protected CardType cardType;
 
-    protected static int count_id = 0;
+    protected static int countId = 0;
 
     public abstract int getPower();
 
+    @SuppressWarnings("unused")
     public abstract int getInitPower();
 
     public abstract Skill getSkill();
@@ -36,6 +36,7 @@ public abstract class AbstractCard {
         return icon;
     }
 
+    @SuppressWarnings("unused")
     public String getName() {
         return name;
     }
@@ -45,33 +46,34 @@ public abstract class AbstractCard {
     }
 
     public AbstractCard() throws IOException {
-        BufferedImage image = ImageIO.read(new File("src/images/no_image.png"));
+        final BufferedImage image = ImageIO.read(new File("src/images/no_image.png"));
         this.icon = new ImageIcon(image);
 
-        this.id = AbstractCard.count_id;
-        AbstractCard.count_id++;
+        this.id = AbstractCard.countId;
+        AbstractCard.countId++;
 
         this.name = "anonymous";
 
         this.cardType = CardType.student;
     }
 
-    public AbstractCard(String _name, String _src, CardType _cardType) throws IOException {
-        BufferedImage image = ImageIO.read(new File(_src));
+    public AbstractCard(String name, String src, CardType cardType) throws IOException {
+        final BufferedImage image = ImageIO.read(new File(src));
         this.icon = new ImageIcon(image);
 
-        this.id = AbstractCard.count_id;
-        AbstractCard.count_id++;
+        this.id = AbstractCard.countId;
+        AbstractCard.countId++;
 
-        this.name = _name;
+        this.name = name;
 
-        this.cardType = _cardType;
+        this.cardType = cardType;
     }
 
+    @SuppressWarnings("RedundantStringConstructorCall")
     public AbstractCard(AbstractCard card) {
         this.icon = card.icon;
-        this.id = AbstractCard.count_id;
-        AbstractCard.count_id++;
+        this.id = AbstractCard.countId;
+        AbstractCard.countId++;
         this.name = new String(card.name);
         this.cardType = card.cardType;
     }
