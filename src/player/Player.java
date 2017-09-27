@@ -19,6 +19,7 @@ public class Player {
     private int score;
     private int winCount;
     private int defeatCount;
+    private Status status;
     private Generator generator = new Generator();
 
     public int getWinCount() {
@@ -55,6 +56,14 @@ public class Player {
 
     public Card getKing() {
         return king;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public void addStudent(Card student) {
@@ -191,6 +200,24 @@ public class Player {
         return maxPower;
     }
 
+//    public Card getMaxCard() {
+//        int maxPower = 0;
+//        Card maxCard = null;
+//        for (Card card: students) {
+//            if (card.getPower() > maxPower) {
+//                maxPower = card.getPower();
+//                maxCard = card;
+//            }
+//        }
+//        for (Card card: teachers) {
+//            if (card.getPower() > maxPower) {
+//                maxPower = card.getPower();
+//                maxCard = card;
+//            }
+//        }
+//        return maxCard;
+//    }
+
     @SuppressWarnings("Duplicates")
     public void killSelfStrongestCards(int maxPower) {
         final Iterator<Card> iterStud = students.iterator();
@@ -227,5 +254,6 @@ public class Player {
         reserve.addAll(generator.iuTeachers(4));
         reserve.addAll(generator.moralCards(2));
         score = 0;
+        status = Status.playing;
     }
 }
