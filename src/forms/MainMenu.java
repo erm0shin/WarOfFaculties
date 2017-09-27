@@ -12,25 +12,26 @@ public class MainMenu extends JDialog {
     private JLabel fractionLabel;
     private JButton choiceEnemyButton;
     private JLabel enemyIPLabel;
-    private static Fraction fraction;
-    private static String enemyIP;
+    private Fraction fraction;
+    private String enemyIP;
+
 
     @SuppressWarnings("unused")
-    public static Fraction getFraction() {
+    public Fraction getFraction() {
         return fraction;
     }
 
-    public static void setFraction(Fraction fraction) {
-        MainMenu.fraction = fraction;
+    public void setFraction(Fraction fraction) {
+        this.fraction = fraction;
     }
 
     @SuppressWarnings("unused")
-    public static String getEnemyIP() {
+    public String getEnemyIP() {
         return enemyIP;
     }
 
-    public static void setEnemyIP(String enemyIP) {
-        MainMenu.enemyIP = enemyIP;
+    public void setEnemyIP(String enemyIP) {
+        this.enemyIP = enemyIP;
     }
 
     public MainMenu() {
@@ -57,7 +58,7 @@ public class MainMenu extends JDialog {
     }
 
     private void choiceFraction() throws IOException {
-        final ChoiceFraction dialog = new ChoiceFraction();
+        final ChoiceFraction dialog = new ChoiceFraction(this);
         dialog.pack();
         dialog.setVisible(true);
         if (fraction == Fraction.IU) {
@@ -66,13 +67,17 @@ public class MainMenu extends JDialog {
     }
 
     private void choiceEnemy() {
-        final ChoiceEnemy dialog = new ChoiceEnemy();
+        final ChoiceEnemy dialog = new ChoiceEnemy(this);
         dialog.pack();
         dialog.setVisible(true);
         enemyIPLabel.setText(enemyIP);
     }
 
     private void play() throws IOException {
+        if ((fractionLabel.getText().equals("Nothing")) || (enemyIPLabel.getText().equals("Nothing"))) {
+            JOptionPane.showMessageDialog(this, "Enter the required data");
+            return;
+        }
         final Field dialog = new Field();
         dialog.pack();
         dialog.setVisible(true);

@@ -25,14 +25,6 @@ public class RemovedCards extends JDialog {
 
         this.cards = field.getPlayer().getRemovedCards();
 
-//        for (int i = 0; i < cards.size(); i++) {
-//            JButton button = new JButton();
-//            cards card = cards.get(i);
-//            button.setIcon(card.getIcon());
-//            removedCards.add(button);
-//            removedCards.revalidate();
-//            button.addActionListener(e -> prechoice(card.getId(), button));
-//        }
         for (Card card : cards) {
             final JButton button = new JButton();
             button.setIcon(card.getIcon());
@@ -62,20 +54,9 @@ public class RemovedCards extends JDialog {
             removedCards.getComponent(i).setBackground(defaultColor);
         }
         button.setBackground(Color.ORANGE);
-//        System.out.println(cardId);
     }
 
     private void submit(Field field) throws IOException {
-//        int i = 0;
-//        for (; i < cards.size(); i++) {
-//            final cards card = cards.get(i);
-//            if (cardId == card.getId()) {
-//                final cards clone = new cards(card);
-//                field.Move(field.getPlayer(), field.getEnemy(), clone, -1);
-//                field.getPlayer().removeRemovedCard(card);
-//                break;
-//            }
-//        }
         for (Card card : cards) {
             if (cardId == card.getId()) {
                 final Card clone = new Card(card);
@@ -86,11 +67,4 @@ public class RemovedCards extends JDialog {
         }
         dispose();
     }
-
-//    public static void main(String[] args) {
-//        RemovedCards dialog = new RemovedCards();
-//        dialog.pack();
-//        dialog.setVisible(true);
-//        System.exit(0);
-//    }
 }

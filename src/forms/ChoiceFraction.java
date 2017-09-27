@@ -12,10 +12,13 @@ public class ChoiceFraction extends JDialog {
     private JRadioButton iuButton;
     private JLabel iuLabel;
     private JButton submitButton;
+    private MainMenu menu;
 
-    public ChoiceFraction() throws IOException {
+    public ChoiceFraction(MainMenu menu) throws IOException {
         setContentPane(contentPane);
         setModal(true);
+
+        this.menu = menu;
 
         iuLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/images/proletarskiy.png"))));
         iuButton.setSelected(true);
@@ -25,7 +28,7 @@ public class ChoiceFraction extends JDialog {
 
     private void submit() {
         if (iuButton.isSelected()) {
-            MainMenu.setFraction(Fraction.IU);
+            menu.setFraction(Fraction.IU);
             dispose();
         }
     }

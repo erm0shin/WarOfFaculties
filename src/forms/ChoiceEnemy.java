@@ -6,23 +6,19 @@ public class ChoiceEnemy extends JDialog {
     private JPanel contentPane;
     private JTextField enemyIPField;
     private JButton submitButton;
+    private MainMenu menu;
 
-    public ChoiceEnemy() {
+    public ChoiceEnemy(MainMenu menu) {
         setContentPane(contentPane);
         setModal(true);
+
+        this.menu = menu;
 
         submitButton.addActionListener(e -> submit());
     }
 
     private void submit() {
-        MainMenu.setEnemyIP(enemyIPField.getText());
+        menu.setEnemyIP(enemyIPField.getText());
         dispose();
-    }
-
-    public static void main(String[] args) {
-        final ChoiceEnemy dialog = new ChoiceEnemy();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 }
