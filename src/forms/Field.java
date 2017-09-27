@@ -210,8 +210,12 @@ public class Field extends JDialog {
             enemy.setStatus(Status.finished);
         }
 
-        if (enemy.getStatus() == Status.finished) {
+        if ((enemy.getStatus() == Status.finished) && (player.getStatus() == Status.finished)) {
             summarazingRound();
+            return;
+        }
+
+        if (enemy.getStatus() == Status.finished) {
             return;
         }
 
@@ -284,6 +288,8 @@ public class Field extends JDialog {
 
         player.setStatus(Status.finished);
 
+//        submitButton.setEnabled(false);
+
         if (enemy.getStatus() == Status.finished) {
             summarazingRound();
         }
@@ -340,6 +346,8 @@ public class Field extends JDialog {
         enemy.removeCardsFromField();
         player.setStatus(Status.playing);
         enemy.setStatus(Status.playing);
+
+//        submitButton.setEnabled(true);
 
         rePaint();
     }
