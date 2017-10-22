@@ -1,5 +1,6 @@
 package forms;
 
+import game.Game;
 import player.Fraction;
 
 import javax.swing.*;
@@ -75,7 +76,7 @@ public class MainMenu extends JDialog {
 
     @SuppressWarnings("unused")
     private void play() throws IOException {
-        if ((fractionLabel.getText().equals("Nothing")) || (enemyIPLabel.getText().equals("Nothing"))) {
+        if ((fractionLabel.getText().equals("Nothing"))/* || (enemyIPLabel.getText().equals("Nothing"))*/) {
             JOptionPane.showMessageDialog(this, "Enter the required data");
             return;
         }

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef811db-779e-43be-93c2-c5a38e2318ee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/Game.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/forms/Game.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/Field.form" afterPath="$PROJECT_DIR$/src/forms/Field.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/Field.java" afterPath="$PROJECT_DIR$/src/forms/Field.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/MainMenu.java" afterPath="$PROJECT_DIR$/src/forms/MainMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/RemovedCards.java" afterPath="$PROJECT_DIR$/src/forms/RemovedCards.java" />
@@ -15,62 +18,75 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="WarOfFaculties" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Field.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Field.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="304" column="37" lean-forward="false" selection-start-line="304" selection-start-column="37" selection-end-line="304" selection-end-column="37" />
+            <state relative-caret-position="306">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Field#0;class#Field#0" expanded="false" />
-                <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-                <element signature="e#3969#4018#0" expanded="true" />
-                <element signature="method#heal#0;class#Field#0" expanded="false" />
                 <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-                <element signature="method#submit#0;class#Field#0" expanded="false" />
                 <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-                <element signature="e#5743#5799#0" expanded="true" />
-                <element signature="method#setMood#0;class#Field#0" expanded="false" />
-                <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-                <element signature="e#7730#7843#0" expanded="true" />
-                <element signature="method#move#0;class#Field#0" expanded="false" />
-                <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-                <element signature="e#9259#9291#0" expanded="true" />
-                <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-                <element signature="e#11210#11259#0" expanded="true" />
-                <element signature="method#spy#0;class#Field#0" expanded="false" />
-                <element signature="method#kill#0;class#Field#0" expanded="false" />
-                <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-                <element signature="e#13481#13530#0" expanded="true" />
-                <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-                <element signature="e#14301#14350#0" expanded="true" />
+                <element signature="e#4740#4772#0" expanded="true" />
+                <element signature="e#7158#7207#0" expanded="true" />
+                <element signature="e#7978#8027#0" expanded="true" />
                 <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="378">
+              <caret line="78" column="105" lean-forward="false" selection-start-line="78" selection-start-column="105" selection-end-line="78" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/forms/Game.java">
+        <entry file="file://$PROJECT_DIR$/src/game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#950#951#0" expanded="true" />
+                <element signature="e#982#983#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1222#1223#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+                <element signature="e#1289#1338#0" expanded="true" />
+                <element signature="e#2026#2139#0" expanded="true" />
+                <element signature="e#4411#4467#0" expanded="true" />
+                <element signature="e#6754#6803#0" expanded="true" />
+                <element signature="method#spy#0;class#Game#0" expanded="false" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Field.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -89,6 +105,10 @@
       <find>CardType.student</find>
       <find>Vector</find>
       <find>count_id</find>
+      <find>rePaint</find>
+      <find>System.out.pr</find>
+      <find>game</find>
+      <find>move</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,13 +149,14 @@
         <option value="$PROJECT_DIR$/src/forms/ChoiceFraction.java" />
         <option value="$PROJECT_DIR$/src/forms/ChoiceEnemy.java" />
         <option value="$PROJECT_DIR$/src/forms/MainMenu.form" />
-        <option value="$PROJECT_DIR$/src/forms/Field.form" />
         <option value="$PROJECT_DIR$/WarOfFaculties.iml" />
+        <option value="$PROJECT_DIR$/src/forms/Game.java" />
         <option value="$PROJECT_DIR$/src/forms/RemovedCards.java" />
-        <option value="$PROJECT_DIR$/src/forms/Field.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/forms/MainMenu.java" />
-        <option value="$PROJECT_DIR$/src/forms/Game.java" />
+        <option value="$PROJECT_DIR$/src/forms/Field.form" />
+        <option value="$PROJECT_DIR$/src/game/Game.java" />
+        <option value="$PROJECT_DIR$/src/forms/Field.java" />
       </list>
     </option>
   </component>
@@ -173,7 +194,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>LocalCanBeFinal</id>
+            <id>UnnecessaryFullyQualifiedName</id>
           </State>
         </selected-state>
       </profile-state>
@@ -222,7 +243,20 @@
               <item name="WarOfFaculties" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="Field" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="WarOfFaculties" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WarOfFaculties" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
               <item name="MainMenu" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="WarOfFaculties" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WarOfFaculties" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,14 +304,9 @@
       <module name="WarOfFaculties" />
       <envs />
     </configuration>
-    <configuration name="MainMenu (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="forms.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="forms.MainMenu" />
+    <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="MainMenu" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -290,8 +319,13 @@
       <envs />
     </configuration>
     <configuration name="MainMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="MainMenu" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="forms.MainMenu" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -452,38 +486,37 @@
       <workItem from="1508409276073" duration="22000" />
       <workItem from="1508411602152" duration="61000" />
       <workItem from="1508426205434" duration="111000" />
-      <workItem from="1508686759307" duration="2585000" />
+      <workItem from="1508686759307" duration="11864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97264000" />
+    <option name="totallyTimeSpent" value="106543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-411" y="81" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12795699" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24623656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24623656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34301075" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3095633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3095633" sideWeight="0.49358973" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3095633" sideWeight="0.50641024" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -497,12 +530,38 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -525,28 +584,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -610,28 +652,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -695,28 +720,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -780,28 +788,11 @@
           <caret line="195" column="50" lean-forward="false" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -865,28 +856,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -978,28 +952,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
             <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
             <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
@@ -1047,13 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1117,49 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4032">
-          <caret line="258" column="1" lean-forward="false" selection-start-line="258" selection-start-column="1" selection-end-line="258" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#727#728#0" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#793#794#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#860#861#0" expanded="false" />
-            <element signature="e#886#887#0" expanded="false" />
-            <element signature="e#922#923#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#1002#1003#0" expanded="false" />
-            <element signature="e#1032#1033#0" expanded="false" />
-            <element signature="e#1076#1077#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1151#1152#0" expanded="false" />
-            <element signature="e#1182#1183#0" expanded="false" />
-            <element signature="e#1230#1231#0" expanded="false" />
-            <element signature="e#1265#1266#0" expanded="false" />
-            <element signature="e#1294#1295#0" expanded="false" />
-            <element signature="e#1321#1322#0" expanded="false" />
-            <element signature="e#1354#1355#0" expanded="false" />
-            <element signature="e#1383#1384#0" expanded="false" />
-            <element signature="e#1427#1428#0" expanded="false" />
-            <element signature="e#1463#1464#0" expanded="false" />
-            <element signature="e#1507#1508#0" expanded="false" />
-            <element signature="e#1544#1545#0" expanded="false" />
-            <element signature="e#2230#2231#0" expanded="false" />
-            <element signature="e#2267#2268#0" expanded="false" />
-            <element signature="e#2648#2649#0" expanded="false" />
-            <element signature="e#2689#2690#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/Status.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1168,61 +1075,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="72" column="31" lean-forward="true" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/RemovedCards.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="304" column="37" lean-forward="false" selection-start-line="304" selection-start-column="37" selection-end-line="304" selection-end-column="37" />
+        <state relative-caret-position="594">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Field#0;class#Field#0" expanded="false" />
-            <element signature="method#setCardToRemoveFromRemoved#0;class#Field#0" expanded="false" />
-            <element signature="e#3969#4018#0" expanded="true" />
-            <element signature="method#heal#0;class#Field#0" expanded="false" />
-            <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
-            <element signature="method#submit#0;class#Field#0" expanded="false" />
-            <element signature="method#prechoice#0;class#Field#0" expanded="false" />
-            <element signature="e#5743#5799#0" expanded="true" />
-            <element signature="method#setMood#0;class#Field#0" expanded="false" />
-            <element signature="method#enemyMove#0;class#Field#0" expanded="false" />
-            <element signature="e#7730#7843#0" expanded="true" />
-            <element signature="method#move#0;class#Field#0" expanded="false" />
-            <element signature="method#finishRound#0;class#Field#0" expanded="false" />
-            <element signature="e#9259#9291#0" expanded="true" />
-            <element signature="method#summarazingRound#0;class#Field#0" expanded="false" />
-            <element signature="e#11210#11259#0" expanded="true" />
-            <element signature="method#spy#0;class#Field#0" expanded="false" />
-            <element signature="method#kill#0;class#Field#0" expanded="false" />
-            <element signature="method#rePaint#0;class#Field#0" expanded="false" />
-            <element signature="e#13481#13530#0" expanded="true" />
-            <element signature="method#rePaintStudents#0;class#Field#0" expanded="false" />
-            <element signature="e#14301#14350#0" expanded="true" />
-            <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="378">
+          <caret line="78" column="105" lean-forward="false" selection-start-line="78" selection-start-column="105" selection-end-line="78" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#950#951#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1289#1338#0" expanded="true" />
+            <element signature="e#2026#2139#0" expanded="true" />
+            <element signature="e#4411#4467#0" expanded="true" />
+            <element signature="e#6754#6803#0" expanded="true" />
+            <element signature="method#spy#0;class#Game#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+            <element signature="method#prechoice#0;class#Field#0" expanded="false" />
+            <element signature="e#4740#4772#0" expanded="true" />
+            <element signature="e#7158#7207#0" expanded="true" />
+            <element signature="e#7978#8027#0" expanded="true" />
+            <element signature="method#rePaintTeachers#0;class#Field#0" expanded="false" />
           </folding>
         </state>
       </provider>

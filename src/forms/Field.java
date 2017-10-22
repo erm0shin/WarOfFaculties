@@ -1,18 +1,15 @@
 package forms;
 
-import cards.*;
+import cards.AbstractCard;
+import cards.Card;
+import game.Game;
 import player.Player;
-import player.Status;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Random;
-
 
 public class Field extends JDialog {
     private JPanel contentPane;
@@ -41,13 +38,14 @@ public class Field extends JDialog {
     private JPanel playerLifes;
     private JLabel enemyStatusLabel;
 
-    private static final double MIN_MULT_COEF = 0.5;
-    private static final double MAX_MULT_COEF = 2;
+    private Game game;
 
-    private Player player = new Player();
-    private Player enemy = new Player();
+    public Field(Player player, Player enemy, Game game) throws IOException {
+        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//        field.setPreferredSize(new Dimension(screenSize.width, (int)(screenSize.height * 0.65)));
 
-    public Field() throws IOException {
+        this.game = game;
+
         setContentPane(contentPane);
         setModal(true);
         submitButton.setEnabled(false);
@@ -94,12 +92,12 @@ public class Field extends JDialog {
 
         submitButton.addActionListener(e -> {
             try {
-                submit();
+                game.myMove(Integer.parseInt(prechoiceLabel.getName()));
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
             try {
-                enemyMove();
+                game.enemyMove();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -108,7 +106,7 @@ public class Field extends JDialog {
 
         finishButton.addActionListener(e -> {
             try {
-                finishRound();
+                game.finishRound();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -117,60 +115,11 @@ public class Field extends JDialog {
         showRemovedCardsButton.addActionListener(e -> showRemovedCards(false));
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
-    private Card cardToResurrection;
-    private Card cardToRemoveFromRemoved;
-
-    public void setCardToRemoveFromRemoved(Card cardToRemoveFromRemoved) {
-        this.cardToRemoveFromRemoved = cardToRemoveFromRemoved;
-    }
-
-    public void setCardToResurrection(Card cardToResurrection) {
-        this.cardToResurrection = cardToResurrection;
-    }
-
-    @SuppressWarnings("ParameterHidesMemberVariable")
-    private void heal(Player player) throws IOException {
-        if (Objects.equals(player, this.player)) {
-            showRemovedCards(true);
-            this.player.removeRemovedCard(cardToRemoveFromRemoved);
-            move(this.player, enemy, cardToResurrection, -1);
-            return;
-        }
-        final int size = enemy.getRemovedCards().size();
-        if (size != 0) {
-            final Random random = new Random();
-            final Card card = enemy.getRemovedCards().get(random.nextInt(size));
-            final Card clone = new Card(card);
-            enemy.removeRemovedCard(card);
-            move(this.enemy, this.player, clone, -1);
-        }
-    }
-
-    private void showRemovedCards(boolean buttonRequired) {
-        final RemovedCards dialog = new RemovedCards(this, buttonRequired);
+    public void showRemovedCards(boolean buttonRequired) {
+        final RemovedCards dialog = new RemovedCards(game, buttonRequired);
         dialog.pack();
         dialog.setVisible(true);
-        rePaint();
-    }
-
-    private void submit() throws IOException {
-        int i = 0;
-        final int id = Integer.parseInt(prechoiceLabel.getName());
-        final ArrayList<AbstractCard> cards = player.getReserve();
-        for (; i < pack.getComponentCount(); i++) {
-            final AbstractCard card = cards.get(i);
-            if (id == card.getId()) {
-                move(player, enemy, card, i);
-                System.out.println(card);
-                break;
-            }
-        }
-        player.removeCard(i);
-        rePaint();
+        rePaint(game.getPlayer(), game.getEnemy());
     }
 
     private void prechoice(Icon icon, int id, boolean key) {
@@ -184,148 +133,29 @@ public class Field extends JDialog {
         }
     }
 
-    @SuppressWarnings("EnumSwitchStatementWhichMissesCases")
-    private void setMood(int index, Player player, Player enemy) {
-        final MoralCard card = (MoralCard)player.getReserve().get(index);
-        switch (card.getCardType()) {
-            case grant:
-                player.multStudents(MAX_MULT_COEF);
-                break;
-            case premium:
-                player.multTeachers(MAX_MULT_COEF);
-                break;
-            case depreciation:
-                enemy.multStudents(MIN_MULT_COEF);
-                break;
-            case reprimand:
-                enemy.multTeachers(MIN_MULT_COEF);
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void enemyMove() throws IOException {
-        if (enemy.getReserve().isEmpty()) {
-            enemy.setStatus(Status.finished);
-        }
-
-        if (player.getStatus() == Status.finished) {
-            enemy.setStatus(Status.finished);
-        }
-
-        if ((enemy.getStatus() == Status.finished) && (player.getStatus() == Status.finished)) {
-            summarazingRound();
-            return;
-        }
-
-        if (enemy.getStatus() == Status.finished) {
-            return;
-        }
-
+    public void drawEnemyMove(AbstractCard card) throws IOException {
         final Timer timer0 = new Timer(0, e -> enemyStatusLabel.setText("Enemy are mooving"));
         timer0.setRepeats(false);
         timer0.start();
 
-        final Random random = new Random();
-        final int index = random.nextInt(enemy.getReserve().size());
-        final AbstractCard card = enemy.getReserve().get(index);
-
-        System.out.println(card);
-        System.out.println();
-
         prechoiceLabel.setIcon(card.getIcon());
-
-        move(enemy, player, card, index);
-
-        enemy.removeCard(index);
 
         final Timer timer = new Timer(1000, e -> {
             enemyStatusLabel.setText("Enemy are waiting");
             prechoiceLabel.setIcon(null);
-            rePaint();
+            rePaint(game.getPlayer(), game.getEnemy());
         });
         timer.setRepeats(false);
 
         timer.start();
     }
 
-    @SuppressWarnings({"OverlyComplexMethod", "ParameterHidesMemberVariable", "EnumSwitchStatementWhichMissesCases"})
-    public void move(Player player, Player enemy, AbstractCard card, int index) throws IOException {
-
-        switch (card.getCardType()) {
-            case student:
-                if (card.getSkill() != Skill.spy) player.addStudent((Card)card);
-                break;
-            case teacher:
-                if (card.getSkill() != Skill.spy) player.addTeacher((Card)card);
-                break;
-            default:
-                setMood(index, player, enemy);
-                break;
-        }
-
-        switch (card.getSkill()) {
-            case nothing:
-                break;
-            case killer:
-                kill();
-                break;
-            case inspire:
-                player.inspire((Card)card);
-                break;
-            case spy:
-                spy(player, enemy, (Card)card);
-                break;
-            case doctor:
-                if (!player.getRemovedCards().isEmpty()) {
-                    heal(player);
-                }
-                break;
-        }
-    }
-
-    private void finishRound() throws IOException {
-
-        //отправить информацию о завершении раунда соперника
-        //получить информацию от соперника о завершении им раунда
-
-        player.setStatus(Status.finished);
-
-//        submitButton.setEnabled(false);
-
-        if (enemy.getStatus() == Status.finished) {
-            summarazingRound();
-        }
-
-        enemyMove();
-    }
-
     @SuppressWarnings("deprecation")
-    private void summarazingRound () {
-        final int playerScore = player.getResScore();
-        final int enemyScore = enemy.getResScore();
-        if (playerScore > enemyScore) {
-            player.incWinCount();
-            enemy.incDefeatCount();
-            JOptionPane.showMessageDialog(this, "You won this round");
-        }
-        if (playerScore < enemyScore) {
-            player.incDefeatCount();
-            enemy.incWinCount();
-            JOptionPane.showMessageDialog(this, "You lose this round");
-        }
-        if (playerScore == enemyScore) {
-            player.incWinCount();
-            player.incDefeatCount();
-            enemy.incWinCount();
-            enemy.incDefeatCount();
-            JOptionPane.showMessageDialog(this, "Dead heat in this round");
-        }
+    public void finishRound(String roundResult, int playerWinCount,
+                            int playerDefeatCount, int enemyDefeatCount) {
 
-        final int playerWinCount = player.getWinCount();
-        final int playerDefeatCount = player.getDefeatCount();
-        final int enemyDefeatCount = enemy.getDefeatCount();
+        JOptionPane.showMessageDialog(this, roundResult);
+
         for (int i = 0; i < playerDefeatCount; i++) {
             this.playerLifes.getComponent(i).hide();
         }
@@ -336,54 +166,23 @@ public class Field extends JDialog {
         if ((playerWinCount == playerDefeatCount) && (playerDefeatCount == 2)) {
             JOptionPane.showMessageDialog(this, "Dead heat in this game");
             dispose();
+            return;
         }
         if (playerWinCount == 2) {
             JOptionPane.showMessageDialog(this, "You won in this game");
             dispose();
+            return;
         }
         if (playerDefeatCount == 2) {
             JOptionPane.showMessageDialog(this, "You lose in this game");
             dispose();
+            return;
         }
 
-        player.removeCardsFromField();
-        enemy.removeCardsFromField();
-        player.setStatus(Status.playing);
-        enemy.setStatus(Status.playing);
-//        submitButton.setEnabled(true);
-
-        rePaint();
+        rePaint(game.getPlayer(), game.getEnemy());
     }
 
-    @SuppressWarnings("ParameterHidesMemberVariable")
-    private void spy(Player player, Player enemy, Card card) throws IOException {
-        if (card.getCardType() == CardType.student) {
-            enemy.addStudent(card);
-        } else {
-            enemy.addTeacher(card);
-        }
-        player.addCards(2);
-    }
-
-    private void kill() {
-        final int maxPlayerPower = player.getMaxPower();
-        final int maxEnemyPower = enemy.getMaxPower();
-
-        if (maxEnemyPower > maxPlayerPower) {
-            enemy.killSelfStrongestCards(maxEnemyPower);
-        }
-        if (maxEnemyPower < maxPlayerPower) {
-            player.killSelfStrongestCards(maxPlayerPower);
-        }
-        if (maxEnemyPower == maxPlayerPower) {
-            enemy.killSelfStrongestCards(maxEnemyPower);
-            player.killSelfStrongestCards(maxPlayerPower);
-        }
-
-        rePaint();
-    }
-
-    private void rePaint() {
+    public void rePaint(Player player, Player enemy) {
         rePaintStudents(students, player);
         rePaintTeachers(teachers, player);
         rePaintStudents(enemyStudents, enemy);
@@ -398,8 +197,6 @@ public class Field extends JDialog {
         enemyResScore.setText(String.valueOf(enemy.getResScore()));
 
         prechoiceLabel.setIcon(null);
-
-        System.out.println(enemy.getReserve().size());
 
         pack.removeAll();
         for (int i = 0; i < player.getReserve().size(); i++) {
