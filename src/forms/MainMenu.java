@@ -73,14 +73,13 @@ public class MainMenu extends JDialog {
         enemyIPLabel.setText(enemyIP);
     }
 
+    @SuppressWarnings("unused")
     private void play() throws IOException {
         if ((fractionLabel.getText().equals("Nothing")) || (enemyIPLabel.getText().equals("Nothing"))) {
             JOptionPane.showMessageDialog(this, "Enter the required data");
             return;
         }
-        final Field dialog = new Field();
-        dialog.pack();
-        dialog.setVisible(true);
+        final Game game = new Game();
     }
 
     public static void main(String[] args) {

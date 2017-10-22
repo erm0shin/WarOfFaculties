@@ -4,7 +4,6 @@ import cards.Card;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class RemovedCards extends JDialog {
@@ -39,13 +38,7 @@ public class RemovedCards extends JDialog {
             submitButton.hide();
         }
 
-        submitButton.addActionListener(e -> {
-            try {
-                submit(field);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        });
+        submitButton.addActionListener(e -> submit(field));
     }
 
     private void prechoice(int id, JButton button) {
@@ -56,12 +49,12 @@ public class RemovedCards extends JDialog {
         button.setBackground(Color.ORANGE);
     }
 
-    private void submit(Field field) throws IOException {
+    private void submit(Field field) {
         for (Card card : cards) {
             if (cardId == card.getId()) {
                 final Card clone = new Card(card);
-                field.move(field.getPlayer(), field.getEnemy(), clone, -1);
-                field.getPlayer().removeRemovedCard(card);
+                field.setCardToResurrection(clone);
+                field.setCardToRemoveFromRemoved(card);
                 break;
             }
         }

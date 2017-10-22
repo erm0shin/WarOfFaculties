@@ -121,19 +121,23 @@ public class Field extends JDialog {
         return player;
     }
 
-    public Player getEnemy() {
-        return enemy;
+    private Card cardToResurrection;
+    private Card cardToRemoveFromRemoved;
+
+    public void setCardToRemoveFromRemoved(Card cardToRemoveFromRemoved) {
+        this.cardToRemoveFromRemoved = cardToRemoveFromRemoved;
+    }
+
+    public void setCardToResurrection(Card cardToResurrection) {
+        this.cardToResurrection = cardToResurrection;
     }
 
     @SuppressWarnings("ParameterHidesMemberVariable")
     private void heal(Player player) throws IOException {
-
-        //Не баг, а фича!
-        //Предусмотреть воскрешение лекаря
-        //Бесконечное добавление карт!!!
-
         if (Objects.equals(player, this.player)) {
             showRemovedCards(true);
+            this.player.removeRemovedCard(cardToRemoveFromRemoved);
+            move(this.player, enemy, cardToResurrection, -1);
             return;
         }
         final int size = enemy.getRemovedCards().size();
@@ -162,7 +166,7 @@ public class Field extends JDialog {
             if (id == card.getId()) {
                 move(player, enemy, card, i);
                 System.out.println(card);
-                break; // Иначе выкладывает несколько одинаковых карт!!!
+                break;
             }
         }
         player.removeCard(i);
