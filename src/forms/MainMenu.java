@@ -11,10 +11,8 @@ public class MainMenu extends JDialog {
     private JButton playButton;
     private JButton choiceFractionButton;
     private JLabel fractionLabel;
-    private JButton choiceEnemyButton;
-    private JLabel enemyIPLabel;
+    private JButton infoButton;
     private Fraction fraction;
-    private String enemyIP;
 
 
     @SuppressWarnings("unused")
@@ -24,15 +22,6 @@ public class MainMenu extends JDialog {
 
     public void setFraction(Fraction fraction) {
         this.fraction = fraction;
-    }
-
-    @SuppressWarnings("unused")
-    public String getEnemyIP() {
-        return enemyIP;
-    }
-
-    public void setEnemyIP(String enemyIP) {
-        this.enemyIP = enemyIP;
     }
 
     public MainMenu() {
@@ -55,7 +44,7 @@ public class MainMenu extends JDialog {
             }
         });
 
-        choiceEnemyButton.addActionListener(e -> choiceEnemy());
+        infoButton.addActionListener(e -> showInfo());
     }
 
     private void choiceFraction() throws IOException {
@@ -67,16 +56,24 @@ public class MainMenu extends JDialog {
         }
     }
 
-    private void choiceEnemy() {
-        final ChoiceEnemy dialog = new ChoiceEnemy(this);
-        dialog.pack();
-        dialog.setVisible(true);
-        enemyIPLabel.setText(enemyIP);
+    private void showInfo() {
+        JOptionPane.showMessageDialog(this, "Гуренко: воскрешает карту из бито\n" +
+                "Кузовлев: карта выкладывается на стороне врага, но в вашу колоду добавляются 2 случайных карты\n" +
+                "Иванов: убивает сильнейшую карту на поле\n" +
+                "Иванова: прибавляет всем воюющим преподавателям 1 к силе\n" +
+                "Губарь: прибавляет всем воюющим преподавателям 1 к силе\n" +
+                "Тихомирова: прибавляет всем воюющим преподавателям 1 к силе\n" +
+                "Технопарковец: прибавляет всем воюющим студентам 1 к силе\n" +
+                "Двоечник: карта выкладывается на стороне врага, но в вашу колоду добавляются 2 случайных карты\n" +
+                "Премия: удваивает силу воюющих преподавателей\n" +
+                "Депремирование: уменьшает силу воюющих преподавателей вдвое\n" +
+                "Стипендия: удваивает силу воюющих студентов\n" +
+                "Выговор: уменьшает силу воюющих студентов вдвое");
     }
 
     @SuppressWarnings("unused")
     private void play() throws IOException {
-        if ((fractionLabel.getText().equals("Nothing"))/* || (enemyIPLabel.getText().equals("Nothing"))*/) {
+        if ((fractionLabel.getText().equals("Nothing"))) {
             JOptionPane.showMessageDialog(this, "Enter the required data");
             return;
         }

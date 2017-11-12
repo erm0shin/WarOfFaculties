@@ -22,12 +22,13 @@ public class Game {
     private Card cardToResurrection;
     private Card cardToRemoveFromRemoved;
 
+    @SuppressWarnings("MagicNumber")
     public Game() throws IOException {
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         player = new Player();
         enemy = new Player();
         field = new Field(player, enemy, this);
-        field.setPreferredSize(new Dimension(screenSize.width, (int)(screenSize.height * 0.65)));
+        field.setPreferredSize(new Dimension(screenSize.width, (int)(screenSize.height * 0.70)));
         field.pack();
         field.setVisible(true);
     }
@@ -114,11 +115,7 @@ public class Game {
     }
 
     public void enemyMove() throws IOException {
-        if (enemy.getReserve().isEmpty()) {
-            enemy.setStatus(Status.finished);
-        }
-
-        if (player.getStatus() == Status.finished) {
+        if (enemy.getReserve().isEmpty() || (player.getStatus() == Status.finished)) {
             enemy.setStatus(Status.finished);
         }
 

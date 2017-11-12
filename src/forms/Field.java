@@ -41,13 +41,12 @@ public class Field extends JDialog {
     private Game game;
 
     public Field(Player player, Player enemy, Game game) throws IOException {
-        final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-//        field.setPreferredSize(new Dimension(screenSize.width, (int)(screenSize.height * 0.65)));
-
         this.game = game;
 
         setContentPane(contentPane);
         setModal(true);
+        prechoiceLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        prechoiceLabel.setHorizontalTextPosition(JLabel.CENTER);
         submitButton.setEnabled(false);
         showRemovedCardsButton.setEnabled(false);
 
@@ -83,11 +82,13 @@ public class Field extends JDialog {
         for (int i = 0; i < player.getReserve().size(); i++) {
             final JButton button = new JButton();
             final AbstractCard card = player.getReserve().get(i);
+            button.setVerticalTextPosition(AbstractButton.BOTTOM);
+            button.setHorizontalTextPosition(AbstractButton.CENTER);
             button.setIcon(card.getIcon());
             button.setText(String.valueOf(card.getPower()));
             pack.add(button);
             pack.revalidate();
-            button.addActionListener(e -> prechoice(card.getIcon(), card.getId(), true));
+            button.addActionListener(e -> prechoice(card.getIcon(), card.getId(), card.getName(), true));
         }
 
         submitButton.addActionListener(e -> {
@@ -122,9 +123,10 @@ public class Field extends JDialog {
         rePaint(game.getPlayer(), game.getEnemy());
     }
 
-    private void prechoice(Icon icon, int id, boolean key) {
+    private void prechoice(Icon icon, int id, String name, boolean key) {
         prechoiceLabel.setIcon(icon);
         prechoiceLabel.setName(String.valueOf(id));
+        prechoiceLabel.setText(name);
 
         if (key) {
             submitButton.setEnabled(true);
@@ -139,10 +141,12 @@ public class Field extends JDialog {
         timer0.start();
 
         prechoiceLabel.setIcon(card.getIcon());
+        prechoiceLabel.setText(card.getName());
 
         final Timer timer = new Timer(1000, e -> {
             enemyStatusLabel.setText("Enemy are waiting");
             prechoiceLabel.setIcon(null);
+            prechoiceLabel.setText("");
             rePaint(game.getPlayer(), game.getEnemy());
         });
         timer.setRepeats(false);
@@ -197,14 +201,17 @@ public class Field extends JDialog {
         enemyResScore.setText(String.valueOf(enemy.getResScore()));
 
         prechoiceLabel.setIcon(null);
+        prechoiceLabel.setText("");
 
         pack.removeAll();
         for (int i = 0; i < player.getReserve().size(); i++) {
             final AbstractCard card = player.getReserve().get(i);
             final JButton button = new JButton();
+            button.setVerticalTextPosition(AbstractButton.BOTTOM);
+            button.setHorizontalTextPosition(AbstractButton.CENTER);
             button.setIcon(card.getIcon());
             button.setText(String.valueOf(card.getPower()));
-            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), true));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), card.getName(), true));
             pack.add(button);
             pack.revalidate();
         }
@@ -222,9 +229,11 @@ public class Field extends JDialog {
         for (int i = 0; i < player.getStudents().size(); i++) {
             final Card card = player.getStudents().get(i);
             final JButton button = new JButton();
+            button.setVerticalTextPosition(AbstractButton.BOTTOM);
+            button.setHorizontalTextPosition(AbstractButton.CENTER);
             button.setIcon(card.getIcon());
             button.setText(String.valueOf(card.getPower()));
-            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), false));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), card.getName(), false));
             panel.add(button);
             panel.revalidate();
         }
@@ -241,9 +250,11 @@ public class Field extends JDialog {
         for (int i = 0; i < player.getTeachers().size(); i++) {
             final Card card = player.getTeachers().get(i);
             final JButton button = new JButton();
+            button.setVerticalTextPosition(AbstractButton.BOTTOM);
+            button.setHorizontalTextPosition(AbstractButton.CENTER);
             button.setIcon(card.getIcon());
             button.setText(String.valueOf(card.getPower()));
-            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), false));
+            button.addActionListener(e -> prechoice(button.getIcon(), card.getId(), card.getName(), false));
             panel.add(button);
             panel.revalidate();
         }
