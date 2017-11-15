@@ -1,1 +1,23 @@
-.idea
+#JetBrains
+.idea/
+*.iml
+
+# Log file
+*.log
+
+# Artifact
+*.class
+/target
+/build
+/out
+
+# Log file
+*.log
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
