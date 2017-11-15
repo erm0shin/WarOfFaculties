@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef811db-779e-43be-93c2-c5a38e2318ee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/cards/AbstractCard.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/cards/Card.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/cards/CardType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/cards/MoralCard.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/cards/Skill.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/forms/ChoiceFraction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/forms/Field.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/forms/MainMenu.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/forms/RemovedCards.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/game/Game$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/game/Game.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/images/dvoechnik.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/images/ruby.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/player/Player$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/player/Status.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/dvoechnik.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/Game.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/forms/ChoiceEnemy.form" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WarOfFaculties/images/ivanova.jpg" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/images/ivanova.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WarOfFaculties/images/proletarskiy.png" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/images/proletarskiy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WarOfFaculties/player/Generator.class" afterPath="$PROJECT_DIR$/out/production/WarOfFaculties/player/Generator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/images/ivanova.jpg" afterPath="$PROJECT_DIR$/src/images/ivanova.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/images/proletarskiy.png" afterPath="$PROJECT_DIR$/src/images/proletarskiy.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/ChoiceEnemy.java" afterPath="$PROJECT_DIR$/src/forms/ChoiceEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/Field.form" afterPath="$PROJECT_DIR$/src/forms/Field.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/Field.java" afterPath="$PROJECT_DIR$/src/forms/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/MainMenu.form" afterPath="$PROJECT_DIR$/src/forms/MainMenu.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/MainMenu.java" afterPath="$PROJECT_DIR$/src/forms/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/forms/RemovedCards.java" afterPath="$PROJECT_DIR$/src/forms/RemovedCards.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/player/Generator.java" afterPath="$PROJECT_DIR$/src/player/Generator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +24,7 @@
       <file leaf-file-name="Field.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4572">
+            <state relative-caret-position="0">
               <caret line="259" column="9" lean-forward="false" selection-start-line="259" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,7 +37,7 @@
       <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
+            <state relative-caret-position="1116">
               <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,8 +46,23 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="MainMenu.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.form">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemovedCards.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/RemovedCards.java">
+=======
       <file leaf-file-name="AbstractCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cards/AbstractCard.java">
+>>>>>>> develop
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
@@ -85,11 +71,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/player/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChoiceFraction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/ChoiceFraction.java">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2682">
+              <caret line="239" column="50" lean-forward="false" selection-start-line="239" selection-start-column="50" selection-end-line="239" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Field#0;class#Field#0" expanded="false" />
+                <element signature="method#heal#0;class#Field#0" expanded="false" />
+                <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
+            <state relative-caret-position="72">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> develop
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Field.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
+<<<<<<< HEAD
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,38 +121,17 @@
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChoiceFraction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/forms/ChoiceFraction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Field.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
+=======
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+>>>>>>> develop
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainMenu.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.form">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -205,6 +203,10 @@
         <option value="$PROJECT_DIR$/src/forms/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/player/Generator.java" />
         <option value="$PROJECT_DIR$/src/forms/Field.java" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/forms/Field.form" />
+=======
+>>>>>>> develop
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -222,10 +224,17 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
+    <option name="x" value="-272" />
+    <option name="y" value="84" />
+    <option name="width" value="1409" />
+    <option name="height" value="996" />
+=======
     <option name="x" value="610" />
     <option name="y" value="319" />
     <option name="width" value="1853" />
     <option name="height" value="1048" />
+>>>>>>> develop
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -251,7 +260,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -265,6 +274,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="AndroidView" />
+>>>>>>> develop
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,10 +306,14 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="AndroidView" />
+=======
       <pane id="Scope" />
+>>>>>>> develop
       <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,6 +550,9 @@
       <workItem from="1506027564545" duration="1205000" />
       <workItem from="1506551025938" duration="1147000" />
       <workItem from="1506553181726" duration="62000" />
+<<<<<<< HEAD
+      <workItem from="1510774620377" duration="46000" />
+=======
       <workItem from="1506554083080" duration="1127000" />
       <workItem from="1506801325282" duration="141000" />
       <workItem from="1506801543752" duration="610000" />
@@ -551,15 +571,22 @@
       <workItem from="1510522128068" duration="37000" />
       <workItem from="1510673567816" duration="691000" />
       <workItem from="1510774063657" duration="521000" />
-      <workItem from="1510775231895" duration="14000" />
+>>>>>>> develop
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119689000" />
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="90314000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-272" y="84" width="1855" height="1084" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="119675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="610" y="319" width="1855" height="1084" extended-state="6" />
+>>>>>>> develop
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -568,24 +595,42 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22150537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35376343" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24623656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22940852" sideWeight="0.49358973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29242676" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22150537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35376343" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22664456" sideWeight="0.49358973" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> develop
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3095633" sideWeight="0.50641024" order="5" side_tool="true" content_ui="tabs" />
+>>>>>>> develop
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12795699" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> develop
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -626,11 +671,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
+      <option name="time" value="23" />
+=======
       <option name="time" value="25" />
+>>>>>>> develop
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -638,6 +689,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> develop
     <entry file="file://$PROJECT_DIR$/src/forms/RemovedCards.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -649,7 +701,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -681,7 +739,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -713,7 +777,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -745,7 +815,13 @@
           <caret line="195" column="50" lean-forward="false" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -777,7 +853,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -837,7 +919,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+<<<<<<< HEAD
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+=======
             <element signature="method#showRemovedCards#0;class#Field#0" expanded="false" />
+>>>>>>> develop
           </folding>
         </state>
       </provider>
@@ -855,11 +943,24 @@
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/cards/Skill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/ChoiceFraction.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+=======
     <entry file="file://$PROJECT_DIR$/src/cards/MoralCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
+>>>>>>> develop
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cards/CardType.java">
@@ -876,6 +977,34 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cards/MoralCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1206">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Fraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+=======
     <entry file="file://$PROJECT_DIR$/src/player/Fraction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -890,7 +1019,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/ChoiceEnemy.form" />
     <entry file="file://$PROJECT_DIR$/src/forms/ChoiceEnemy.java" />
-    <entry file="file://$PROJECT_DIR$/WarOfFaculties.iml" />
+    <entry file="file://$PROJECT_DIR$/WarOfFaculties.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> develop
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/player/Status.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -905,20 +1041,66 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/forms/ChoiceEnemy.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WarOfFaculties.iml" />
+    <entry file="file://$PROJECT_DIR$/src/forms/ChoiceFraction.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/forms/RemovedCards.java">
+>>>>>>> develop
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/RemovedCards.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/game/Game.java">
+>>>>>>> develop
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1512">
           <caret line="30" column="93" lean-forward="false" selection-start-line="30" selection-start-column="93" selection-end-line="30" selection-end-column="93" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/forms/ChoiceEnemy.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/cards/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -927,8 +1109,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/ChoiceFraction.java">
+>>>>>>> develop
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -936,9 +1119,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
+        <state relative-caret-position="2682">
+          <caret line="239" column="50" lean-forward="false" selection-start-line="239" selection-start-column="50" selection-end-line="239" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Field#0;class#Field#0" expanded="false" />
+            <element signature="method#heal#0;class#Field#0" expanded="false" />
+            <element signature="method#move#0;class#Field#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Player.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.java">
+>>>>>>> develop
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
           <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -955,30 +1155,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/Field.form">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ui-designer">
+<<<<<<< HEAD
+=======
+      <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/MainMenu.form">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ui-designer">
+      <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/forms/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4572">
+        <state relative-caret-position="0">
           <caret line="259" column="9" lean-forward="false" selection-start-line="259" selection-start-column="9" selection-end-line="259" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -987,18 +1177,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/player/Generator.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+>>>>>>> develop
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+<<<<<<< HEAD
+      <provider editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/player/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+>>>>>>> develop
           <folding />
         </state>
       </provider>

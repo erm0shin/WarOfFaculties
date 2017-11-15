@@ -1,10 +1,10 @@
 package forms;
 
 import cards.Card;
+import game.Game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class RemovedCards extends JDialog {
@@ -16,14 +16,14 @@ public class RemovedCards extends JDialog {
     private ArrayList<Card> cards;
 
     @SuppressWarnings("deprecation")
-    public RemovedCards(Field field, boolean buttonRequired) {
+    public RemovedCards(Game game, boolean buttonRequired) {
         setContentPane(contentPane);
         setModal(true);
         submitButton.setFocusable(false);
 
         removedCards.setLayout(new GridLayout());
 
-        this.cards = field.getPlayer().getRemovedCards();
+        this.cards = game.getPlayer().getRemovedCards();
 
         for (Card card : cards) {
             final JButton button = new JButton();
@@ -39,13 +39,7 @@ public class RemovedCards extends JDialog {
             submitButton.hide();
         }
 
-        submitButton.addActionListener(e -> {
-            try {
-                submit(field);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        });
+        submitButton.addActionListener(e -> submit(game));
     }
 
     private void prechoice(int id, JButton button) {
@@ -56,12 +50,14 @@ public class RemovedCards extends JDialog {
         button.setBackground(Color.ORANGE);
     }
 
-    private void submit(Field field) throws IOException {
+    private void submit(Game game) {
         for (Card card : cards) {
             if (cardId == card.getId()) {
                 final Card clone = new Card(card);
-                field.move(field.getPlayer(), field.getEnemy(), clone, -1);
-                field.getPlayer().removeRemovedCard(card);
+//                field.setCardToResurrection(clone);
+//                field.setCardToRemoveFromRemoved(card);
+                game.setCardToResurrection(clone);
+                game.setCardToRemoveFromRemoved(card);
                 break;
             }
         }

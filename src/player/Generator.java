@@ -21,8 +21,8 @@ public class Generator {
         pack.add(new Card("Первокурсник", "src/images/pervokursnik.png", CardType.student, 1, Skill.nothing));
         pack.add(new Card("Первокурсник", "src/images/pervokursnik.png", CardType.student, 1, Skill.nothing));
 
-        pack.add(new Card("Двоечник", "src/images/dvoechnik.png", CardType.student, 1, Skill.spy));
-        pack.add(new Card("Двоечник", "src/images/dvoechnik.png", CardType.student, 1, Skill.spy));
+        pack.add(new Card("Двоечник", "src/images/dvoechnik.jpg", CardType.student, 1, Skill.spy));
+        pack.add(new Card("Двоечник", "src/images/dvoechnik.jpg", CardType.student, 1, Skill.spy));
 
         pack.add(new Card("Выпускник", "src/images/vypusknik.png", CardType.student, 4, Skill.nothing));
         pack.add(new Card("Выпускник", "src/images/vypusknik.png", CardType.student, 4, Skill.nothing));

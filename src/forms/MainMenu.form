@@ -13,7 +13,7 @@
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Play"/>
+          <text value="Играть"/>
         </properties>
       </component>
       <component id="3cd6b" class="javax.swing.JLabel" binding="fractionLabel">
@@ -21,7 +21,7 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Nothing"/>
+          <text value="Не выбрано"/>
         </properties>
       </component>
       <component id="bec08" class="javax.swing.JButton" binding="choiceFractionButton" default-binding="true">
@@ -29,23 +29,15 @@
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Choice Fraction"/>
+          <text value="Выбрать фракцию"/>
         </properties>
       </component>
-      <component id="a3571" class="javax.swing.JLabel" binding="enemyIPLabel">
+      <component id="78bb5" class="javax.swing.JButton" binding="infoButton">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Nothing"/>
-        </properties>
-      </component>
-      <component id="c91a4" class="javax.swing.JButton" binding="choiceEnemyButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Choice Enemy"/>
+          <text value="Инструкция"/>
         </properties>
       </component>
     </children>
