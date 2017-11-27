@@ -1,6 +1,6 @@
-package forms;
+package main.forms;
 
-import player.Fraction;
+import main.player.Fraction;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -20,7 +20,7 @@ public class ChoiceFraction extends JDialog {
 
         this.menu = menu;
 
-        iuLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/images/proletarskiy.png"))));
+        iuLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/static/proletarskiy.png"))));
         iuButton.setSelected(true);
 
         submitButton.addActionListener(e -> submit());

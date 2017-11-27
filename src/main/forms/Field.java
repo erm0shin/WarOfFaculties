@@ -1,9 +1,9 @@
-package forms;
+package main.forms;
 
-import cards.AbstractCard;
-import cards.Card;
-import game.Game;
-import player.Player;
+import main.cards.AbstractCard;
+import main.cards.Card;
+import main.player.Player;
+import main.game.Game;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -50,7 +50,7 @@ public class Field extends JDialog {
         submitButton.setEnabled(false);
         showRemovedCardsButton.setEnabled(false);
 
-        enemyStatusLabel.setText("Enemy are waiting");
+        enemyStatusLabel.setText("Противник ожидает Вас");
 
         studScore.setText("0");
         teachScore.setText("0");
@@ -66,7 +66,7 @@ public class Field extends JDialog {
 
         enemyKingLabel.setIcon(enemy.getKing().getIcon());
 
-        final ImageIcon ruby = new ImageIcon(ImageIO.read(new File("src/images/ruby.jpg")));
+        final ImageIcon ruby = new ImageIcon(ImageIO.read(new File("src/static/ruby.jpg")));
         playerLife1Label.setIcon(ruby);
         playerLife2Label.setIcon(ruby);
         enemyLife1Label.setIcon(ruby);
@@ -136,7 +136,7 @@ public class Field extends JDialog {
     }
 
     public void drawEnemyMove(AbstractCard card) throws IOException {
-        final Timer timer0 = new Timer(0, e -> enemyStatusLabel.setText("Enemy are mooving"));
+        final Timer timer0 = new Timer(0, e -> enemyStatusLabel.setText("Противник ходит"));
         timer0.setRepeats(false);
         timer0.start();
 
@@ -144,7 +144,7 @@ public class Field extends JDialog {
         prechoiceLabel.setText(card.getName());
 
         final Timer timer = new Timer(1000, e -> {
-            enemyStatusLabel.setText("Enemy are waiting");
+            enemyStatusLabel.setText("Противник ожидает Вас");
             prechoiceLabel.setIcon(null);
             prechoiceLabel.setText("");
             rePaint(game.getPlayer(), game.getEnemy());
@@ -168,17 +168,17 @@ public class Field extends JDialog {
         }
 
         if ((playerWinCount == playerDefeatCount) && (playerDefeatCount == 2)) {
-            JOptionPane.showMessageDialog(this, "Dead heat in this game");
+            JOptionPane.showMessageDialog(this, "Ничья в этой партии");
             dispose();
             return;
         }
         if (playerWinCount == 2) {
-            JOptionPane.showMessageDialog(this, "You won in this game");
+            JOptionPane.showMessageDialog(this, "Вы выиграли эту партию");
             dispose();
             return;
         }
         if (playerDefeatCount == 2) {
-            JOptionPane.showMessageDialog(this, "You lose in this game");
+            JOptionPane.showMessageDialog(this, "Вы проиграли эту партию");
             dispose();
             return;
         }

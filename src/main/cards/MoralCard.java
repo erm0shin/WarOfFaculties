@@ -1,4 +1,4 @@
-package cards;
+package main.cards;
 
 import java.io.IOException;
 

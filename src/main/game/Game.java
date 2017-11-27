@@ -1,9 +1,9 @@
-package game;
+package main.game;
 
-import cards.*;
-import forms.Field;
-import player.Player;
-import player.Status;
+import main.cards.*;
+import main.forms.Field;
+import main.player.Player;
+import main.player.Status;
 
 import java.awt.*;
 import java.io.IOException;
@@ -159,13 +159,7 @@ public class Game {
     }
 
     public void finishRound() throws IOException {
-
-        //отправить информацию о завершении раунда соперника
-        //получить информацию от соперника о завершении им раунда
-
         player.setStatus(Status.finished);
-
-//        submitButton.setEnabled(false);
 
         if (enemy.getStatus() == Status.finished) {
             summarazingRound();
@@ -181,19 +175,19 @@ public class Game {
         if (playerScore > enemyScore) {
             player.incWinCount();
             enemy.incDefeatCount();
-            roundResult = "You won this round";
+            roundResult = "Вы выиграли этот раунд";
         }
         if (playerScore < enemyScore) {
             player.incDefeatCount();
             enemy.incWinCount();
-            roundResult = "You lose this round";
+            roundResult = "Вы проиграли этот раунд";
         }
         if (playerScore == enemyScore) {
             player.incWinCount();
             player.incDefeatCount();
             enemy.incWinCount();
             enemy.incDefeatCount();
-            roundResult = "Dead heat in this round";
+            roundResult = "Ничья в этом раунде";
         }
 
         final int playerWinCount = player.getWinCount();
@@ -204,7 +198,6 @@ public class Game {
         enemy.removeCardsFromField();
         player.setStatus(Status.playing);
         enemy.setStatus(Status.playing);
-//        submitButton.setEnabled(true);
 
         field.finishRound(roundResult, playerWinCount, playerDefeatCount, enemyDefeatCount);
     }

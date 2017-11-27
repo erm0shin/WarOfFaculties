@@ -1,12 +1,13 @@
-package player;
+package main.player;
+
+import main.cards.AbstractCard;
+import main.cards.Card;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Random;
-
-import cards.*;
 
 public class Player {
     private ArrayList<AbstractCard> reserve = new ArrayList<>();
@@ -95,11 +96,6 @@ public class Player {
     }
 
     public void removeCard(int index) {
-//        AbstractCard card = reserve.get(index);
-//        if ((card.getCardType() == CardType.student) || (card.getCardType() == CardType.teacher)) {
-//            cards clone = new cards((cards)card);
-//            removedCards.add(clone);
-//        }
         reserve.remove(index);
     }
 
@@ -111,14 +107,12 @@ public class Player {
         for (Card card: students) {
             card.setPowerToInitial();
             final Card clone = new Card(card);
-//            clone.setPowerToInitial();
             removedCards.add(clone);
         }
         students.clear();
         for (Card card: teachers) {
             card.setPowerToInitial();
             final Card clone = new Card(card);
-//            clone.setPowerToInitial();
             removedCards.add(clone);
         }
         teachers.clear();
@@ -161,13 +155,7 @@ public class Player {
     public void inspire(Card card/*CardType cardType*/) {
         switch (card.getCardType()/*cardType*/) {
             case student:
-//                for (int i = 0; i < students.size(); i++) {
-//                    if (students.get(i) != card) {
-//                        students.get(i).incPower();
-//                    }
-//                }
                 for (Card student : students) {
-//                    if (student != card) {
                     if (!Objects.equals(student, card)) {
                         student.incPower();
                     }
@@ -200,24 +188,6 @@ public class Player {
         return maxPower;
     }
 
-//    public Card getMaxCard() {
-//        int maxPower = 0;
-//        Card maxCard = null;
-//        for (Card card: students) {
-//            if (card.getPower() > maxPower) {
-//                maxPower = card.getPower();
-//                maxCard = card;
-//            }
-//        }
-//        for (Card card: teachers) {
-//            if (card.getPower() > maxPower) {
-//                maxPower = card.getPower();
-//                maxCard = card;
-//            }
-//        }
-//        return maxCard;
-//    }
-
     @SuppressWarnings("Duplicates")
     public void killSelfStrongestCards(int maxPower) {
         final Iterator<Card> iterStud = students.iterator();
@@ -241,8 +211,6 @@ public class Player {
                 iterTeach.remove();
             }
         }
-//        students.removeIf(card -> card.getPower() == maxPower);
-//        teachers.removeIf(card -> card.getPower() == maxPower);
     }
 
     public Player() throws IOException {

@@ -1,4 +1,4 @@
-package cards;
+package main.cards;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -46,7 +46,7 @@ public abstract class AbstractCard {
     }
 
     public AbstractCard() throws IOException {
-        final BufferedImage image = ImageIO.read(new File("src/images/no_image.png"));
+        final BufferedImage image = ImageIO.read(new File("src/static/no_image.png"));
         this.icon = new ImageIcon(image);
 
         this.id = AbstractCard.countId;

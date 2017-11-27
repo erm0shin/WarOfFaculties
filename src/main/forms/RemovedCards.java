@@ -1,7 +1,7 @@
-package forms;
+package main.forms;
 
-import cards.Card;
-import game.Game;
+import main.cards.Card;
+import main.game.Game;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,8 +54,6 @@ public class RemovedCards extends JDialog {
         for (Card card : cards) {
             if (cardId == card.getId()) {
                 final Card clone = new Card(card);
-//                field.setCardToResurrection(clone);
-//                field.setCardToRemoveFromRemoved(card);
                 game.setCardToResurrection(clone);
                 game.setCardToRemoveFromRemoved(card);
                 break;

@@ -1,7 +1,7 @@
-package forms;
+package main.forms;
 
-import game.Game;
-import player.Fraction;
+import main.game.Game;
+import main.player.Fraction;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -52,12 +52,18 @@ public class MainMenu extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         if (fraction == Fraction.IU) {
-            fractionLabel.setText("IU");
+            fractionLabel.setText("ИУ");
         }
     }
 
     private void showInfo() {
-        JOptionPane.showMessageDialog(this, "Гуренко: воскрешает карту из бито\n" +
+        JOptionPane.showMessageDialog(this, "Для победы в игре необходимо выиграть 2 раунда.\n" +
+                "Для победы в раунде необходимо набрать очков больше, чем у соперника.\n" +
+                "Как только захотите закончить раунд, нажмите кнопку 'Спасовать'.\n" +
+                "Для того чтобы пустить карту в бой, выберете ее из своей колоды и нажмите 'Подтвердить'.\n" +
+                "Для того чтобы увидеть свое бито, нажмите кнопку 'Показать бито'\n\n" +
+                "В игре присутствуют карты с особыми возможностями:\n" +
+                "Гуренко: воскрешает карту из бито\n" +
                 "Кузовлев: карта выкладывается на стороне врага, но в вашу колоду добавляются 2 случайных карты\n" +
                 "Иванов: убивает сильнейшую карту на поле\n" +
                 "Иванова: прибавляет всем воюющим преподавателям 1 к силе\n" +
@@ -73,8 +79,8 @@ public class MainMenu extends JDialog {
 
     @SuppressWarnings("unused")
     private void play() throws IOException {
-        if ((fractionLabel.getText().equals("Nothing"))) {
-            JOptionPane.showMessageDialog(this, "Enter the required data");
+        if ((fractionLabel.getText().equals("Не выбрано"))) {
+            JOptionPane.showMessageDialog(this, "Выберете фракцию");
             return;
         }
         final Game game = new Game();
