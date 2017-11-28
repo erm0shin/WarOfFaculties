@@ -52,7 +52,7 @@ public class Generator {
     ArrayList<Card> iuTeachers(int number) throws IOException {
         final ArrayList<Card> pack = new ArrayList<>();
 
-        pack.add(new Card("Гуренко", "src/static/gurenko.png", CardType.teacher, 4, Skill.doctor));
+        pack.add(new Card("Гуренко", "src/static/gurenko.jpg", CardType.teacher, 4, Skill.doctor));
         pack.add(new Card("Кузовлев", "src/static/kuzovlev.png", CardType.teacher, 4, Skill.spy));
         pack.add(new Card("Тихомирова", "src/static/tichomirova.png", CardType.teacher, 3, Skill.inspire));
         pack.add(new Card("Иванов", "src/static/ivanov.png", CardType.teacher, 5, Skill.killer));
